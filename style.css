@@ -1,0 +1,78 @@
+
+:root {
+    --stone-bg: #0c0a09;
+    --emerald-primary: #10b981;
+}
+
+body {
+    background-color: var(--stone-bg);
+    color: #e7e5e4;
+    font-family: 'Inter', 'Noto Sans JP', sans-serif;
+    overflow-x: hidden;
+}
+
+.glass-panel {
+    background: rgba(28, 25, 23, 0.7);
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(68, 64, 60, 0.4);
+}
+
+/* フィルタチップ */
+.filter-chip {
+    padding: 4px 10px;
+    background: #1c1917;
+    border: 1px solid #44403c;
+    border-radius: 4px;
+    font-size: 9px;
+    font-weight: 900;
+    color: #78716c;
+    text-transform: uppercase;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+.filter-chip:hover {
+    color: #d6d3d1;
+    border-color: #57534e;
+}
+.filter-chip.active {
+    background: #064e3b;
+    border-color: #10b981;
+    color: #10b981;
+    box-shadow: 0 0 10px rgba(16, 185, 129, 0.1);
+}
+
+@keyframes slideIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-slide-in {
+    animation: slideIn 0.3s ease-out forwards;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+    width: 6px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+    background: rgba(0,0,0,0.2);
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+    background: #44403c;
+    border-radius: 10px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #57534e;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+.no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.nav-btn {
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
+}
