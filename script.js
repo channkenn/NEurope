@@ -7,7 +7,8 @@ import { DATABASE } from './data.js';
 
 const state = {
     log: { year: 'all', season: 'all', tag: 'all', sort: 'asc' },
-    villager: { year: 4, sort: 'social' } // 初期表示は最新のYear 4、社会的地位順
+    villager: { year: 4, sort: 'social' },
+    resource: { year: 1, season: '春', sort: 'category' } // 初期表示は Year 1 春
 };
 
 const templates = {
@@ -141,29 +142,59 @@ const templates = {
         `;
     },
 
-    // 4. データ分析
+    // 4. データ分析（資源分析）
     data: () => {
-        const { stats } = DATABASE;
+        const { stats, resourceTimeline } = DATABASE;
+        const years = [...new Set(resourceTimeline.map(r => r.year))];
+        const seasons = [...new Set(resourceTimeline.map(r => r.season))];
+
         return `
-            <div class="animate-slide-in glass-panel p-10 rounded-3xl space-y-10 shadow-2xl">
-                <h2 class="text-2xl font-black uppercase tracking-tighter text-stone-100">資源分析マトリクス</h2>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
-                    <div class="p-8 bg-stone-950 rounded-2xl border border-stone-900">
-                        <p class="text-[10px] text-stone-500 font-black uppercase tracking-widest">備蓄穀物量</p>
-                        <p class="text-4xl font-black text-emerald-500">${stats.grainNet}<span class="text-sm ml-1 text-stone-500">kg</span></p>
+            <div class="animate-slide-in space-y-10">
+                <div class="glass-panel p-10 rounded-3xl shadow-2xl">
+                    <h2 class="text-2xl font-black uppercase tracking-tighter text-stone-100 mb-8">資源分析・ストックマトリクス</h2>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+                        <div class="space-y-1.5">
+                            <label class="text-[8px] font-black text-stone-600 uppercase tracking-widest block">Timeline</label>
+                            <div class="flex gap-1">
+                                ${years.map(y => `<button onclick="window.updateResourceFilter('year', ${y})" class="filter-chip flex-1 ${state.resource.year === y ? 'active' : ''}">Y${y}</button>`).join('')}
+                            </div>
+                        </div>
+                        <div class="space-y-1.5">
+                            <label class="text-[8px] font-black text-stone-600 uppercase tracking-widest block">Season</label>
+                            <div class="flex gap-1">
+                                ${seasons.map(s => `<button onclick="window.updateResourceFilter('season', '${s}')" class="filter-chip flex-1 ${state.resource.season === s ? 'active' : ''}">${s}</button>`).join('')}
+                            </div>
+                        </div>
+                        <div class="space-y-1.5">
+                            <label class="text-[8px] font-black text-stone-600 uppercase tracking-widest block">Sort by</label>
+                            <select onchange="window.updateResourceFilter('sort', this.value)" class="w-full bg-stone-900 border border-stone-800 text-[10px] font-bold p-1.5 rounded outline-none text-stone-300">
+                                <option value="category" ${state.resource.sort === 'category' ? 'selected' : ''}>カテゴリ</option>
+                                <option value="value" ${state.resource.sort === 'value' ? 'selected' : ''}>数量順</option>
+                                <option value="name" ${state.resource.sort === 'name' ? 'selected' : ''}>名前順</option>
+                            </select>
+                        </div>
                     </div>
-                    <div class="p-8 bg-stone-950 rounded-2xl border border-stone-900">
-                        <p class="text-[10px] text-stone-500 font-black uppercase tracking-widest">生存期待値</p>
-                        <p class="text-4xl font-black text-blue-500">${stats.survivalProb}<span class="text-sm ml-1 text-stone-500">%</span></p>
+
+                    <div id="resources-container" class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-10"></div>
+
+                    <div class="pt-10 border-t border-stone-800">
+                        <h4 class="text-xs font-black uppercase text-emerald-500 mb-6 tracking-widest">最終統計サマリ</h4>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
+                            <div class="p-4 bg-stone-950 rounded-xl border border-stone-900">
+                                <p class="text-[9px] text-stone-500 font-black uppercase">最終備蓄量</p>
+                                <p class="text-2xl font-black text-emerald-500">${stats.grainNet}kg</p>
+                            </div>
+                            <div class="p-4 bg-stone-950 rounded-xl border border-stone-900">
+                                <p class="text-[9px] text-stone-500 font-black uppercase">生存期待値</p>
+                                <p class="text-2xl font-black text-blue-500">${stats.survivalProb}%</p>
+                            </div>
+                            <div class="p-4 bg-stone-950 rounded-xl border border-stone-900">
+                                <p class="text-[9px] text-stone-500 font-black uppercase">インフラLv</p>
+                                <p class="text-2xl font-black text-amber-500">Lv ${stats.infraLevel}</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="p-8 bg-stone-950 rounded-2xl border border-stone-900">
-                        <p class="text-[10px] text-stone-500 font-black uppercase tracking-widest">インフラ段階</p>
-                        <p class="text-xl font-black text-amber-500 uppercase">Level ${stats.infraLevel}</p>
-                    </div>
-                </div>
-                <div class="p-8 bg-stone-900/50 rounded-2xl border border-stone-800">
-                    <h4 class="text-xs font-black uppercase text-emerald-500 mb-4 tracking-widest">Analysis Notes</h4>
-                    <p class="text-xs text-stone-400 leading-relaxed italic">"${stats.analysisNote}"</p>
                 </div>
             </div>
         `;
@@ -253,6 +284,34 @@ function renderVillagers() {
     `).join('');
 }
 
+function renderResources() {
+    const container = document.getElementById('resources-container');
+    if (!container) return;
+
+    let filtered = DATABASE.resourceTimeline.filter(r => 
+        r.year === state.resource.year && r.season === state.resource.season
+    );
+
+    filtered.sort((a, b) => {
+        if (state.resource.sort === 'value') return b.value - a.value;
+        if (state.resource.sort === 'category') return a.category.localeCompare(b.category, 'ja');
+        return a.label.localeCompare(b.label, 'ja');
+    });
+
+    container.innerHTML = filtered.length === 0 ? '<p class="col-span-2 text-center opacity-50 py-10">No records found for this period.</p>' : filtered.map(r => `
+        <div class="p-4 bg-stone-950 rounded-xl border border-stone-900 group flex items-center justify-between transition-all hover:border-emerald-900/40">
+            <div>
+                <p class="text-[8px] font-black text-stone-600 uppercase tracking-widest mb-1">${r.category}</p>
+                <h4 class="text-sm font-bold text-stone-200 group-hover:text-emerald-500 transition-colors">${r.label}</h4>
+            </div>
+            <div class="text-right">
+                <p class="text-lg font-black text-stone-100">${r.value}<span class="text-[10px] ml-1 text-stone-500">${r.unit}</span></p>
+                <span class="text-[8px] font-black px-1.5 py-0.5 rounded bg-stone-900 text-stone-400 uppercase tracking-widest">${r.status}</span>
+            </div>
+        </div>
+    `).join('');
+}
+
 /**
  * グローバル公開関数
  */
@@ -269,6 +328,11 @@ window.toggleLogSort = () => {
 window.updateVillagerFilter = (key, value) => {
     state.villager[key] = value;
     switchTab('villagers');
+};
+
+window.updateResourceFilter = (key, value) => {
+    state.resource[key] = value;
+    switchTab('data');
 };
 
 function switchTab(tabId) {
@@ -290,6 +354,7 @@ function switchTab(tabId) {
     mainContent.innerHTML = templates[tabId]();
     if (tabId === 'logs') renderLogs();
     if (tabId === 'villagers') renderVillagers();
+    if (tabId === 'data') renderResources();
 }
 
 function init() {
