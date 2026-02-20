@@ -1,0 +1,1 @@
+/* This file is deprecated. Logic moved to script.js per environment standard. */
