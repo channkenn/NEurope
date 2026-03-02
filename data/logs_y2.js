@@ -1,6 +1,7 @@
 export const logs_y2 = [
   {
     year: 2,
+    phase: 1,
     season: "春",
     title: "鉄釘を用いた微量元素補給（アイアン・インジェクション）の開始",
     event:
@@ -11,6 +12,7 @@ export const logs_y2 = [
   },
   {
     year: 2,
+    phase: 1,
     season: "春",
     title: "資本投資：余剰穀物による生産資本と保存インフラの拡充",
     event:
@@ -21,6 +23,7 @@ export const logs_y2 = [
   },
   {
     year: 2,
+    phase: 1,
     season: "春",
     title: "高価値現物交易：塩の確保と資産の多角化",
     event:
@@ -31,6 +34,7 @@ export const logs_y2 = [
   },
   {
     year: 2,
+    phase: 1,
     season: "春",
     title: "外交戦略：教会という技術独占体へのアプローチ",
     event:
@@ -41,6 +45,7 @@ export const logs_y2 = [
   },
   {
     year: 2,
+    phase: 1,
     season: "春",
     title: "外交的な資源選定：高純度精製ラードの献納",
     event:
@@ -51,6 +56,7 @@ export const logs_y2 = [
   },
   {
     year: 2,
+    phase: 1,
     season: "春",
     title: "塩の再結晶化精製：太陽エネルギーと炭吸着による純度向上",
     event:
@@ -61,6 +67,7 @@ export const logs_y2 = [
   },
   {
     year: 2,
+    phase: 1,
     season: "春",
     title: "先行乾燥材（立ち枯れ材）の回収と評価",
     event:
@@ -71,6 +78,7 @@ export const logs_y2 = [
   },
   {
     year: 2,
+    phase: 1,
     season: "春",
     title: "非鉄金属環境下での木材加工：火工術と熱力学的伐採",
     event:
@@ -81,6 +89,7 @@ export const logs_y2 = [
   },
   {
     year: 2,
+    phase: 1,
     season: "春",
     title: "熱誘導割裂による板材生産：熱応力制御の転用",
     event:
@@ -91,6 +100,7 @@ export const logs_y2 = [
   },
   {
     year: 2,
+    phase: 1,
     season: "春",
     title: "水理インフラの構築：炭化防腐貯水槽と簡易濾過システム",
     event:
@@ -101,6 +111,7 @@ export const logs_y2 = [
   },
   {
     year: 2,
+    phase: 1,
     season: "春",
     title: "高多目的バイオマス導入：ヘンプ（麻）の試験栽培開始",
     event:
@@ -111,6 +122,7 @@ export const logs_y2 = [
   },
   {
     year: 2,
+    phase: 1,
     season: "春",
     title: "先行開拓プロトコル：環状剥皮と混播による土壌改質",
     event:
@@ -121,6 +133,7 @@ export const logs_y2 = [
   },
   {
     year: 2,
+    phase: 1,
     season: "春",
     title: "熱化学的平面研磨：炭化層を利用した自己組織化研磨",
     event:
@@ -131,6 +144,7 @@ export const logs_y2 = [
   },
   {
     year: 2,
+    phase: 1,
     season: "春",
     title: "比較文明工学：伝統技法の異世界適応",
     event:
@@ -141,6 +155,7 @@ export const logs_y2 = [
   },
   {
     year: 2,
+    phase: 1,
     season: "春",
     title: "時間資源の物理資産化：納期なき環境における極限最適化",
     event:
@@ -151,6 +166,7 @@ export const logs_y2 = [
   },
   {
     year: 2,
+    phase: 1,
     season: "春",
     title: "高度ジビエ加工プロトコル：精製塩と油脂封入による最適化",
     event:
@@ -161,6 +177,7 @@ export const logs_y2 = [
   },
   {
     year: 2,
+    phase: 1,
     season: "春",
     title: "隠蔽型食料生産：低揮発性コンフィによるリスク回避",
     event:
@@ -171,6 +188,7 @@ export const logs_y2 = [
   },
   {
     year: 2,
+    phase: 1,
     season: "春",
     title: "バイオケミカル資源回収：炭粉吸着法によるラノリン精製",
     event:
@@ -181,6 +199,7 @@ export const logs_y2 = [
   },
   {
     year: 2,
+    phase: 1,
     season: "春",
     title: "資源の機能分離：視覚的カモフラージュと高純度薬剤の抽出",
     event:
@@ -191,6 +210,7 @@ export const logs_y2 = [
   },
   {
     year: 2,
+    phase: 1,
     season: "春",
     title: "母性工具の製作：三面擦り法による精密定盤（砥石）の生成",
     event:
@@ -201,6 +221,7 @@ export const logs_y2 = [
   },
   {
     year: 2,
+    phase: 1,
     season: "夏",
     title: "高機能シェルターの構造化：ヘンプ遮蔽下での高床建築実装",
     event:
@@ -211,6 +232,7 @@ export const logs_y2 = [
   },
   {
     year: 2,
+    phase: 1,
     season: "夏",
     title: "非破壊型長繊維抽出：構造用索道資材としてのヘンプ精製",
     event:
@@ -221,6 +243,7 @@ export const logs_y2 = [
   },
   {
     year: 2,
+    phase: 1,
     season: "夏",
     title: "繊維強化複合土質材料（FRC）による外殻補強",
     event: "ヘンプ繊維を粘土に混入。かまどの再構築および土壁の補修を実施。",
@@ -230,6 +253,7 @@ export const logs_y2 = [
   },
   {
     year: 2,
+    phase: 1,
     season: "夏",
     title: "化学的土質安定化：塩化マグネシウム（にがり）による硬化実装",
     event:
@@ -240,6 +264,7 @@ export const logs_y2 = [
   },
   {
     year: 2,
+    phase: 1,
     season: "夏",
     title: "淡水資源の高度利用：蓄養による泥抜きとリソース探査",
     event:
@@ -250,6 +275,7 @@ export const logs_y2 = [
   },
   {
     year: 2,
+    phase: 1,
     season: "夏〜秋",
     title: "遠隔防衛デバイスの配備：ヘンプ組紐による高精度スリングショット",
     event:
@@ -260,6 +286,7 @@ export const logs_y2 = [
   },
   {
     year: 2,
+    phase: 1,
     season: "秋",
     title: "自己効力感の確立：少女による初ハントと精神的自立",
     event:
@@ -270,6 +297,7 @@ export const logs_y2 = [
   },
   {
     year: 2,
+    phase: 1,
     season: "秋",
     title: "土壌最適化の成功と収穫高の向上",
     event:
@@ -280,6 +308,7 @@ export const logs_y2 = [
   },
   {
     year: 2,
+    phase: 1,
     season: "秋",
     title: "外交・納税プロトコル：高精度バイオ繊維による技術供与",
     event:
@@ -290,6 +319,7 @@ export const logs_y2 = [
   },
   {
     year: 2,
+    phase: 1,
     season: "秋",
     title: "政治的負荷分散：世俗・宗教権力へのリソース配分",
     event:
@@ -300,6 +330,7 @@ export const logs_y2 = [
   },
   {
     year: 2,
+    phase: 1,
     season: "夏〜秋",
     title: "皮革工学の実装：植物タンニンおよび油脂エマルションによる鞣し",
     event:
@@ -310,6 +341,7 @@ export const logs_y2 = [
   },
   {
     year: 2,
+    phase: 1,
     season: "夏〜秋",
     title: "低品質リソースの選別と消臭プロセス",
     event:
@@ -320,6 +352,7 @@ export const logs_y2 = [
   },
   {
     year: 2,
+    phase: 1,
     season: "秋",
     title: "森林マネジメントの収穫：選択的環状剥皮の結実",
     event:
@@ -330,6 +363,7 @@ export const logs_y2 = [
   },
   {
     year: 2,
+    phase: 1,
     season: "晩秋",
     title: "熱エネルギー収支の最適化：単一立木による年間供給の理論的実証",
     event:
@@ -340,6 +374,7 @@ export const logs_y2 = [
   },
   {
     year: 2,
+    phase: 1,
     season: "冬",
     title: "資源循環の階層化：低エントロピー材の多段階利用（カスケード）",
     event:
@@ -350,6 +385,7 @@ export const logs_y2 = [
   },
   {
     year: 2,
+    phase: 1,
     season: "冬",
     title: "小規模区画におけるエネルギー自給：3本の立木による年次運用",
     event:
@@ -360,6 +396,7 @@ export const logs_y2 = [
   },
   {
     year: 2,
+    phase: 1,
     season: "冬",
     title: "建築様式の技術的批判：ログハウスの非効率性",
     event:
@@ -370,6 +407,7 @@ export const logs_y2 = [
   },
   {
     year: 2,
+    phase: 1,
     season: "冬",
     title: "構造接合の最適化：相欠き接合と繊維緊張による剛性確保",
     event:
@@ -380,6 +418,7 @@ export const logs_y2 = [
   },
   {
     year: 2,
+    phase: 1,
     season: "秋",
     title: "熱エネルギー・カスケード：家畜区画への廃熱デプロイ",
     event:
@@ -390,6 +429,7 @@ export const logs_y2 = [
   },
   {
     year: 2,
+    phase: 1,
     season: "冬",
     title: "非破壊的衣類設計：アルカリ精錬ヘンプを用いた肌着",
     event:
@@ -400,6 +440,7 @@ export const logs_y2 = [
   },
   {
     year: 2,
+    phase: 1,
     season: "冬",
     title: "低摩耗・高通気アンダーウェアの配備：紐留め式構造",
     event:
@@ -410,6 +451,7 @@ export const logs_y2 = [
   },
   {
     year: 2,
+    phase: 1,
     season: "冬",
     title: "三層レイヤードシステムの構築：機能分担と社会的擬態",
     event:
@@ -420,6 +462,7 @@ export const logs_y2 = [
   },
   {
     year: 2,
+    phase: 1,
     season: "冬",
     title: "垂直統合型衣類生産システムの運用：自給自足によるアセット管理",
     event:
@@ -430,6 +473,7 @@ export const logs_y2 = [
   },
   {
     year: 2,
+    phase: 1,
     season: "冬",
     title: "ループ構造による伸縮性防寒具：ニッティングの導入",
     event:
@@ -440,6 +484,7 @@ export const logs_y2 = [
   },
   {
     year: 2,
+    phase: 1,
     season: "冬",
     title: "光透過型断熱デバイス：油脂処理ヘンプペーパーの複層窓",
     event:
@@ -450,6 +495,7 @@ export const logs_y2 = [
   },
   {
     year: 2,
+    phase: 1,
     season: "冬",
     title: "物理的破砕プロセスの多重化：木臼のセグメンテーション",
     event:
@@ -460,6 +506,7 @@ export const logs_y2 = [
   },
   {
     year: 2,
+    phase: 1,
     season: "冬",
     title: "リズム作業による精神的バッファの維持",
     event:
@@ -470,6 +517,7 @@ export const logs_y2 = [
   },
   {
     year: 2,
+    phase: 1,
     season: "冬",
     title: "食糧加工プロトコルの策定：煮炊きへの限定による安全確保",
     event:
@@ -480,6 +528,7 @@ export const logs_y2 = [
   },
   {
     year: 2,
+    phase: 1,
     season: "冬",
     title: "複合的バイオマス・インベントリの確立：多層的な供給網",
     event:
@@ -490,6 +539,7 @@ export const logs_y2 = [
   },
   {
     year: 2,
+    phase: 1,
     season: "冬",
     title: "廃熱利用型融雪水供給システムのデプロイ：物流負荷の解消",
     event:
@@ -500,6 +550,7 @@ export const logs_y2 = [
   },
   {
     year: 2,
+    phase: 1,
     season: "冬",
     title: "外部ノードとの生活水準格差（デバイド）の観測",
     event:
@@ -510,6 +561,7 @@ export const logs_y2 = [
   },
   {
     year: 2,
+    phase: 1,
     season: "冬",
     title: "固定式炭窯の構築と炭化プロセスの最適化",
     event:
@@ -520,6 +572,7 @@ export const logs_y2 = [
   },
   {
     year: 2,
+    phase: 1,
     season: "冬",
     title: "外付け拡張型炭窯（サイド・モジュール）のデプロイ",
     event:
@@ -530,6 +583,7 @@ export const logs_y2 = [
   },
   {
     year: 2,
+    phase: 1,
     season: "冬",
     title: "高耐久炭窯の竣工：インフラ層の強化",
     event:
@@ -540,6 +594,7 @@ export const logs_y2 = [
   },
   {
     year: 2,
+    phase: 1,
     season: "冬",
     title: "工具性能格差とリソース競合の回避",
     event:
@@ -550,6 +605,7 @@ export const logs_y2 = [
   },
   {
     year: 2,
+    phase: 1,
     season: "冬",
     title: "非工具型・森林資源獲得プロセス：熱切断と転がり輸送",
     event:
@@ -560,6 +616,7 @@ export const logs_y2 = [
   },
   {
     year: 2,
+    phase: 1,
     season: "冬",
     title: "氷雪面を利用した低摩擦物流：超重量物搬送",
     event:
@@ -570,6 +627,7 @@ export const logs_y2 = [
   },
   {
     year: 2,
+    phase: 1,
     season: "冬",
     title: "アセットのカモフラージュと視覚的セキュリティ",
     event:
@@ -580,6 +638,7 @@ export const logs_y2 = [
   },
   {
     year: 2,
+    phase: 1,
     season: "冬",
     title: "森林リソースの外部オンデマンド化：分散ストレージ戦略",
     event:
@@ -590,6 +649,7 @@ export const logs_y2 = [
   },
   {
     year: 2,
+    phase: 1,
     season: "冬",
     title: "領域警備レイヤーの構築：森林の視認性向上",
     event:
@@ -600,6 +660,7 @@ export const logs_y2 = [
   },
   {
     year: 2,
+    phase: 1,
     season: "秋",
     title: "野薔薇の果実（ローズヒップ）の活用と鉄分吸収最適化",
     event:
@@ -610,6 +671,7 @@ export const logs_y2 = [
   },
   {
     year: 2,
+    phase: 1,
     season: "春",
     title: "野草タンニンを用いたタンニン鉄の試作",
     event:
@@ -620,6 +682,7 @@ export const logs_y2 = [
   },
   {
     year: 2,
+    phase: 1,
     season: "秋",
     title: "厩舎衛生管理モジュールのリファクタリング（物理自動洗浄設計）",
     event:
@@ -630,6 +693,7 @@ export const logs_y2 = [
   },
   {
     year: 2,
+    phase: 1,
     season: "秋",
     title: "三和土（たたき）技術による厩舎床の実装",
     event:
@@ -640,6 +704,7 @@ export const logs_y2 = [
   },
   {
     year: 2,
+    phase: 1,
     season: "秋",
     title: "厩舎内装パッチ：炭・麦わらハイブリッド・ベッド",
     event:

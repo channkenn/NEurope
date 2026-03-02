@@ -12,6 +12,7 @@ import { logs_y3 } from "./data/logs_y3.js";
 import { logs_y4 } from "./data/logs_y4.js";
 import { logs_y5 } from "./data/logs_y5.js";
 import { logs_y6 } from "./data/logs_y6.js";
+import { logs_y30 } from "./data/logs_y30.js";
 
 export const DATABASE = {
   // 基本設定（起源、健康指標など）
@@ -25,6 +26,7 @@ export const DATABASE = {
     ...logs_y4,
     ...logs_y5,
     ...logs_y6,
+    ...logs_y30,
   ],
 
   // 登場人物データ

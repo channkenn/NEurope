@@ -1,6 +1,7 @@
 export const logs_y3 = [
   {
     year: 3,
+    phase: 1,
     season: "春",
     title: "『弔いの儀』による地域救済と精神衛生保護",
     event:
@@ -15,6 +16,7 @@ export const logs_y3 = [
   },
   {
     year: 3,
+    phase: 1,
     season: "春",
     title:
       "『弔いの儀』による村人救済と少女の精神衛生保護：リソース分配と防犯の統合運用",
@@ -26,6 +28,7 @@ export const logs_y3 = [
   },
   {
     year: 3,
+    phase: 1,
     season: "春",
     title: "地域管理者への政治的アプローチ：ラード献上による救済事業の公認確保",
     event:
@@ -36,6 +39,7 @@ export const logs_y3 = [
   },
   {
     year: 3,
+    phase: 1,
     season: "春",
     title:
       "複合的バイオマス収集と個体成長の観測：高品位プロテインおよび機能性植物の獲得",
@@ -47,6 +51,7 @@ export const logs_y3 = [
   },
   {
     year: 3,
+    phase: 1,
     season: "春",
     title: "開拓予定地の環境構築：循環型混作システムのデプロイ",
     event:
@@ -57,6 +62,7 @@ export const logs_y3 = [
   },
   {
     year: 3,
+    phase: 1,
     season: "春",
     title:
       "開拓予定地5aの環境構築（テラフォーミング）：循環型混作システムのデプロイ",
@@ -68,6 +74,7 @@ export const logs_y3 = [
   },
   {
     year: 3,
+    phase: 1,
     season: "春",
     title: "大規模穀物栽培（30a）の開始：疎植・草生栽培による長期最適化戦略",
     event:
@@ -78,6 +85,7 @@ export const logs_y3 = [
   },
   {
     year: 3,
+    phase: 1,
     season: "春",
     title: "完全閉鎖型物質循環による土壌肥沃度の向上",
     event:
@@ -88,6 +96,7 @@ export const logs_y3 = [
   },
   {
     year: 3,
+    phase: 1,
     season: "春",
     title:
       "対空精密射撃（スリングショット）による鳥類捕獲：防空セキュリティと高品位食糧の獲得",
@@ -99,6 +108,7 @@ export const logs_y3 = [
   },
   {
     year: 3,
+    phase: 1,
     season: "春",
     title: "鳥類リソースの全損なし処理（ゼロエミッション・プロセス）の定常化",
     event:
@@ -109,6 +119,7 @@ export const logs_y3 = [
   },
   {
     year: 3,
+    phase: 1,
     season: "夏",
     title: "穀物区画の選択的防除およびバッタ捕獲による副次的タンパク質獲得",
     event:
@@ -119,6 +130,7 @@ export const logs_y3 = [
   },
   {
     year: 3,
+    phase: 1,
     season: "夏",
     title: "窒素制御による穀物の短稈化とリソース配分の最適化",
     event:
@@ -129,6 +141,7 @@ export const logs_y3 = [
   },
   {
     year: 3,
+    phase: 1,
     season: "秋",
     title: "第3期大規模収穫完了：高収穫指数モデルによる食糧安全保障の確立",
     event:
@@ -139,6 +152,7 @@ export const logs_y3 = [
   },
   {
     year: 3,
+    phase: 1,
     season: "秋",
     title: "定常的品質による外部提供（献上）の継続：技術進化の隠蔽と信頼維持",
     event:
@@ -149,6 +163,7 @@ export const logs_y3 = [
   },
   {
     year: 3,
+    phase: 1,
     season: "冬",
     title: "熱化学的賦活処理による活性炭の生成",
     event:
@@ -159,6 +174,7 @@ export const logs_y3 = [
   },
   {
     year: 3,
+    phase: 1,
     season: "冬",
     title: "汎用物理解毒剤（活性炭粉末）の精製と常備薬化",
     event:
@@ -169,6 +185,7 @@ export const logs_y3 = [
   },
   {
     year: 3,
+    phase: 1,
     season: "冬",
     title: "定置型緩速ろ過インフラのビルド",
     event:
@@ -179,6 +196,7 @@ export const logs_y3 = [
   },
   {
     year: 3,
+    phase: 1,
     season: "冬",
     title: "8世紀標準織物スタック（垂直おもり式）の完全実装",
     event:
@@ -189,6 +207,7 @@ export const logs_y3 = [
   },
   {
     year: 3,
+    phase: 1,
     season: "冬",
     title:
       "垂直おもり式織機のデプロイ：ミニマリズム構造による繊維加工ラインの確立",
@@ -200,6 +219,7 @@ export const logs_y3 = [
   },
   {
     year: 3,
+    phase: 1,
     season: "冬",
     title: "ヘドルループによる動的接続（疎結合）の実装",
     event:
@@ -210,6 +230,7 @@ export const logs_y3 = [
   },
   {
     year: 3,
+    phase: 1,
     season: "冬",
     title:
       "織機コンポーネントのキャリブレーション：物理利基準による品質差の創出",
@@ -221,6 +242,7 @@ export const logs_y3 = [
   },
   {
     year: 3,
+    phase: 1,
     season: "冬",
     title:
       "高純度ヘンプ繊維と高精度織機による『統合生産システム』のロールアウト",
@@ -232,6 +254,7 @@ export const logs_y3 = [
   },
   {
     year: 3,
+    phase: 1,
     season: "冬",
     title: "高機能衛生ユニット（肌着および月経用品）の実装",
     event:
@@ -242,6 +265,7 @@ export const logs_y3 = [
   },
   {
     year: 3,
+    phase: 1,
     season: "冬",
     title: "排泄後処理プロトコル（非紙媒体洗浄システム）の構築",
     event:
@@ -252,6 +276,7 @@ export const logs_y3 = [
   },
   {
     year: 3,
+    phase: 1,
     season: "冬",
     title: "日欧古代衛生史のクロスオーバーによる排泄後処理の最適化",
     event:
@@ -262,6 +287,7 @@ export const logs_y3 = [
   },
   {
     year: 3,
+    phase: 1,
     season: "冬",
     title: "三面摺りによる基準平面の創出とモジュール工作の確立",
     event:
@@ -272,6 +298,7 @@ export const logs_y3 = [
   },
   {
     year: 3,
+    phase: 1,
     season: "春",
     title: "デーモン・プロセスとしての隣人関係の確立",
     event:

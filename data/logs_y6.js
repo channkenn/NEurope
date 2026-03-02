@@ -1,6 +1,7 @@
 export const logs_y6 = [
   {
     year: 6,
+    phase: 1,
     season: "春",
     title: "社会的ロール（変な隣人）の確定と地域互助プロトコルのデプロイ",
     event:
@@ -11,6 +12,7 @@ export const logs_y6 = [
   },
   {
     year: 6,
+    phase: 1,
     season: "春",
     title: "単独狩猟ユニットの初運用（ソロ・オペレーション開始）",
     event:
@@ -21,6 +23,7 @@ export const logs_y6 = [
   },
   {
     year: 6,
+    phase: 1,
     season: "春",
     title: "狩猟対象のフィルタリングおよびリスク回避アルゴリズムの徹底",
     event:
@@ -31,6 +34,7 @@ export const logs_y6 = [
   },
   {
     year: 6,
+    phase: 1,
     season: "春",
     title:
       "定常運用フェーズ移行後のマルチタスク実行（農耕・燃料生産・環境整備）",

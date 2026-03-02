@@ -2,30 +2,40 @@ import { DATABASE } from "./data.js";
 
 /**
  * 8世紀フランク王国 生存戦略・制御スクリプト
- * 設計原則: 関数の極小化、単一責任、自己説明的な命名
+ * 改修点：章（Phase）概念の導入とUI反映
  */
 
 const state = {
-  log: { year: "all", season: "all", tag: "all", sort: "asc" },
+  log: { phase: 1, year: "all", season: "all", tag: "all", sort: "asc" },
   villager: { year: 4, sort: "social" },
   resource: { year: 1, season: "春", sort: "category" },
 };
 
-/**
- * 外部から呼び出し可能なフィルタリング・インターフェース
- * 表示されているタグをクリックした際に実行される
- */
+// --- グローバル・インターフェース ---
+
 window.filterByTag = (tagName) => {
   state.log.tag = tagName;
-
-  // UI側のセレクトボックスの状態を同期
   const tagSelect = document.getElementById("filter-tag");
-  if (tagSelect) {
-    tagSelect.value = tagName;
-  }
-
+  if (tagSelect) tagSelect.value = tagName;
   renderLogs();
 };
+
+window.updatePhase = (phaseNum) => {
+  state.log.phase = phaseNum;
+  state.log.year = "all"; // 章を切り替えたら年は全表示にリセット
+  renderLogs();
+  // タブの見た目を更新するために再描画
+  const mainContent = document.getElementById("main-content");
+  mainContent.innerHTML = templates.logs();
+  renderLogs();
+};
+
+window.updateVillagerYear = (year) => {
+  state.villager.year = year;
+  renderVillagers();
+};
+
+// --- UI テンプレート ---
 
 const templates = {
   origins: () => {
@@ -52,99 +62,125 @@ const templates = {
                           .join("")}
                     </div>
                 </div>
-            </div>
-        `;
+            </div>`;
   },
 
   logs: () => {
     return `
     <div class="animate-slide-in space-y-6">
+        <div class="flex gap-2 bg-stone-900/50 p-2 rounded-xl border border-stone-800 w-fit">
+            ${[1, 2, 3, 4]
+              .map(
+                (p) => `
+                <button onclick="updatePhase(${p})" 
+                        class="filter-chip ${state.log.phase === p ? "active" : ""}">
+                    Phase ${p}
+                </button>
+            `,
+              )
+              .join("")}
+        </div>
+
         <div class="flex flex-wrap gap-4 items-end bg-stone-900/50 p-6 rounded-2xl border border-stone-800">
             <div class="space-y-2">
                 <label class="text-[10px] font-black uppercase text-stone-500 tracking-widest">時間軸</label>
-                <select id="filter-year" class="bg-stone-950 border border-stone-700 text-stone-300 text-xs rounded-lg block w-28 p-2.5 focus:ring-emerald-500 outline-none"></select>
+                <select id="filter-year" class="bg-stone-950 border border-stone-700 text-stone-300 text-xs rounded-lg block w-28 p-2.5 outline-none"></select>
             </div>
-            
             <div class="space-y-2">
                 <label class="text-[10px] font-black uppercase text-stone-500 tracking-widest">季節</label>
-                <select id="filter-season" class="bg-stone-950 border border-stone-700 text-stone-300 text-xs rounded-lg block w-28 p-2.5 focus:ring-emerald-500 outline-none">
+                <select id="filter-season" class="bg-stone-950 border border-stone-700 text-stone-300 text-xs rounded-lg block w-28 p-2.5 outline-none">
                     <option value="all">全て</option>
                     <option value="春">春</option><option value="夏">夏</option><option value="秋">秋</option><option value="冬">冬</option>
                 </select>
             </div>
-
             <div class="space-y-2">
-                <label class="text-[10px] font-black uppercase text-stone-500 tracking-widest">技術・専門領域</label>
-                <select id="filter-tag" class="bg-stone-950 border border-stone-700 text-stone-300 text-xs rounded-lg block w-40 p-2.5 focus:ring-emerald-500 outline-none"></select>
+                <label class="text-[10px] font-black uppercase text-stone-500 tracking-widest">領域</label>
+                <select id="filter-tag" class="bg-stone-950 border border-stone-700 text-stone-300 text-xs rounded-lg block w-40 p-2.5 outline-none"></select>
             </div>
-
             <div class="space-y-2 ml-auto">
                 <label class="text-[10px] font-black uppercase text-stone-500 tracking-widest">順序</label>
-                <select id="filter-sort" class="bg-stone-950 border border-stone-700 text-stone-300 text-xs rounded-lg block w-28 p-2.5 focus:ring-emerald-500 outline-none">
+                <select id="filter-sort" class="bg-stone-950 border border-stone-700 text-stone-300 text-xs rounded-lg block w-28 p-2.5 outline-none">
                     <option value="asc">昇順</option><option value="desc">降順</option>
                 </select>
             </div>
         </div>
         <div id="log-container" class="space-y-4"></div>
-    </div>
-    `;
+    </div>`;
   },
 
   villagers: () => {
+    // 降臨元年(750年)を基準とした選択肢の生成
+    const BASE_AD = 750;
+    const availableYears = [
+      ...new Set(
+        DATABASE.villagers.flatMap((v) => v.history.map((h) => h.year)),
+      ),
+    ].sort((a, b) => a - b);
+
     return `
-            <div class="animate-slide-in space-y-6">
-                <div class="flex gap-2 bg-stone-900/50 p-2 rounded-xl border border-stone-800 w-fit">
-                    ${[1, 2, 3, 4].map((y) => `<button onclick="updateVillagerYear(${y})" class="filter-chip ${state.villager.year === y ? "active" : ""}">Year ${y}</button>`).join("")}
-                </div>
-                <div id="villager-grid" class="grid grid-cols-1 md:grid-cols-2 gap-6"></div>
-            </div>
-        `;
+      <div class="animate-slide-in space-y-6">
+          <div class="flex flex-wrap gap-4 items-end bg-stone-900/50 p-6 rounded-2xl border border-stone-800">
+              <div class="space-y-2">
+                  <label class="text-[10px] font-black uppercase text-stone-500 tracking-widest">観測時期（降臨後）</label>
+                  <select id="select-villager-year" onchange="updateVillagerYear(this.value)" 
+                          class="bg-stone-950 border border-stone-700 text-stone-300 text-xs rounded-lg block w-48 p-2.5 outline-none focus:border-emerald-500 transition-colors">
+                      ${availableYears
+                        .map(
+                          (y) => `
+                          <option value="${y}" ${state.villager.year == y ? "selected" : ""}>
+                              Year ${y} (AD ${BASE_AD + (y - 1)})
+                          </option>
+                      `,
+                        )
+                        .join("")}
+                  </select>
+              </div>
+              <p class="text-[10px] text-stone-600 font-bold uppercase mb-2 ml-auto">Population Data tracking active</p>
+          </div>
+          <div id="villager-grid" class="grid grid-cols-1 md:grid-cols-2 gap-6"></div>
+      </div>`;
   },
 };
+
+// --- 描画エンジン ---
 
 function renderLogs() {
   const container = document.getElementById("log-container");
   const yearSelect = document.getElementById("filter-year");
-  const seasonSelect = document.getElementById("filter-season");
   const tagSelect = document.getElementById("filter-tag");
-  const sortSelect = document.getElementById("filter-sort");
 
   if (!container) return;
 
-  // 動的プルダウン生成 (初回のみ)
+  // 選択されたPhase内のデータのみに絞り込む
+  const phaseLogs = DATABASE.logs.filter((l) => l.phase === state.log.phase);
+
+  // セレクトボックスの動的更新
   if (yearSelect && yearSelect.innerHTML.trim() === "") {
-    // 年次
-    const years = [...new Set(DATABASE.logs.map((l) => l.year))].sort(
+    const years = [...new Set(phaseLogs.map((l) => l.year))].sort(
       (a, b) => a - b,
     );
     yearSelect.innerHTML =
       `<option value="all">全期間</option>` +
       years.map((y) => `<option value="${y}">Year ${y}</option>`).join("");
 
-    // タグ
-    const tags = [...new Set(DATABASE.logs.flatMap((l) => l.tags))].sort();
+    const tags = [...new Set(phaseLogs.flatMap((l) => l.tags))].sort();
     tagSelect.innerHTML =
       `<option value="all">全技術領域</option>` +
       tags.map((t) => `<option value="${t}">${t}</option>`).join("");
 
-    // 初期値セット
-    yearSelect.value = state.log.year;
-    seasonSelect.value = state.log.season;
-    tagSelect.value = state.log.tag;
-    sortSelect.value = state.log.sort;
-
-    // イベント登録
-    [yearSelect, seasonSelect, tagSelect, sortSelect].forEach((el) => {
-      el.onchange = (e) => {
-        const key = e.target.id.replace("filter-", "");
-        state.log[key] = e.target.value;
-        renderLogs();
-      };
+    // イベントリスナー
+    ["year", "season", "tag", "sort"].forEach((id) => {
+      const el = document.getElementById(`filter-${id}`);
+      if (el)
+        el.onchange = (e) => {
+          state.log[id] = e.target.value;
+          renderLogs();
+        };
     });
   }
 
-  // フィルタリング
-  let filtered = DATABASE.logs.filter((log) => {
+  // フィルタリング実行
+  let filtered = phaseLogs.filter((log) => {
     const matchYear = state.log.year === "all" || log.year == state.log.year;
     const matchSeason =
       state.log.season === "all" || log.season === state.log.season;
@@ -153,19 +189,18 @@ function renderLogs() {
     return matchYear && matchSeason && matchTag;
   });
 
-  // ソート
   filtered.sort((a, b) =>
     state.log.sort === "asc" ? a.year - b.year : b.year - a.year,
   );
 
-  // 描画
-  container.innerHTML = filtered
-    .map(
-      (log) => `
+  container.innerHTML = filtered.length
+    ? filtered
+        .map(
+          (log) => `
     <div class="glass-panel p-6 rounded-2xl border-l-4 border-emerald-500 shadow-xl mb-4 animate-slide-in">
         <div class="flex justify-between items-start mb-4">
             <span class="text-[10px] font-black bg-stone-800 px-2 py-1 rounded text-emerald-500">YEAR ${log.year} / ${log.season}</span>
-            <div class="flex gap-2">${log.tags.map((t) => `<button onclick="filterByTag('${t}')" class="text-[8px] text-stone-500 border border-stone-800 px-2 py-0.5 rounded-full hover:bg-emerald-900/20 hover:text-emerald-500 hover:border-emerald-800 transition-colors">${t}</button>`).join("")}</div>
+            <div class="flex gap-2">${log.tags.map((t) => `<button onclick="filterByTag('${t}')" class="text-[8px] text-stone-500 border border-stone-800 px-2 py-0.5 rounded-full hover:text-emerald-500 hover:border-emerald-800 transition-colors">${t}</button>`).join("")}</div>
         </div>
         <h3 class="text-lg font-bold text-stone-100 mb-2">${log.title}</h3>
         <p class="text-sm text-stone-400 leading-relaxed mb-4">${log.event}</p>
@@ -174,30 +209,65 @@ function renderLogs() {
         </div>
     </div>
   `,
-    )
-    .join("");
+        )
+        .join("")
+    : `<p class="text-stone-500 text-sm italic p-10 text-center">このフェーズのログは未記録です。</p>`;
 }
+// script.js の renderVillagers 関数を差し替え
 
+// --- 描画エンジン ---
 function renderVillagers() {
   const container = document.getElementById("villager-grid");
   if (!container) return;
-  const filtered = DATABASE.villagers.filter(
-    (v) => v.year === state.villager.year,
-  );
-  container.innerHTML = filtered
+
+  const targetYear = parseInt(state.villager.year);
+  const BASE_AD = 750;
+
+  // 住民リストの加工
+  const displayData = DATABASE.villagers
+    .map((v) => {
+      // 指定年以下の最新レコードを取得
+      const record = [...v.history]
+        .filter((h) => h.year <= targetYear)
+        .sort((a, b) => b.year - a.year)[0];
+
+      if (!record) return null;
+
+      return {
+        name: v.name,
+        // 年齢計算ロジック：Year 1 (750年) のとき birthYearOffset -7 なら 1 - (-7) = 8歳
+        age: targetYear - v.birthYearOffset,
+        ad: BASE_AD + (targetYear - 1),
+        role: record.role,
+        status: record.status,
+        evaluation: record.evaluation,
+        traits: record.traits,
+      };
+    })
+    .filter((v) => v !== null);
+
+  container.innerHTML = displayData
     .map(
       (v) => `
-    <div class="glass-panel p-6 rounded-2xl border border-stone-800 flex gap-6">
+    <div class="glass-panel p-6 rounded-2xl border border-stone-800 flex gap-6 animate-slide-in shadow-xl">
         <div class="flex-1">
-            <div class="flex justify-between items-center mb-4">
-                <h3 class="text-xl font-black text-stone-100">${v.name}</h3>
-                <span class="text-[10px] bg-emerald-900/30 text-emerald-500 px-2 py-1 rounded border border-emerald-800/50">${v.role}</span>
+            <div class="flex justify-between items-start mb-4">
+                <div>
+                    <h3 class="text-xl font-black text-stone-100">${v.name}</h3>
+                    <div class="flex items-center gap-2 mt-1">
+                        <span class="text-[10px] text-emerald-500 font-bold uppercase tracking-widest">${v.age}歳</span>
+                        <span class="text-[10px] text-stone-600 font-bold">/</span>
+                        <span class="text-[10px] text-stone-500 font-bold uppercase tracking-widest">${v.status}</span>
+                    </div>
+                </div>
+                <span class="text-[10px] bg-emerald-900/30 text-emerald-500 px-2 py-1 rounded border border-emerald-800/50 font-black">${v.role}</span>
             </div>
-            <p class="text-xs text-stone-400 mb-4 leading-relaxed">${v.evaluation}</p>
-            <div class="flex flex-wrap gap-2">${v.traits.map((t) => `<span class="text-[9px] bg-stone-900 text-stone-500 px-2 py-1 rounded">${t}</span>`).join("")}</div>
+            <p class="text-xs text-stone-400 mb-4 leading-relaxed border-l-2 border-stone-800 pl-4">${v.evaluation}</p>
+            <div class="flex flex-wrap gap-2">
+                ${v.traits.map((t) => `<span class="text-[9px] bg-stone-900 text-stone-500 px-2 py-1 rounded border border-stone-800/50">${t}</span>`).join("")}
+            </div>
         </div>
-    </div>
-  `,
+    </div>`,
     )
     .join("");
 }
@@ -206,37 +276,18 @@ function switchTab(tabId) {
   const mainContent = document.getElementById("main-content");
   const navButtons = document.querySelectorAll(".nav-btn");
   navButtons.forEach((btn) => {
-    if (btn.dataset.target === tabId) {
-      btn.classList.add(
-        "bg-emerald-600",
-        "text-white",
-        "shadow-lg",
-        "scale-[1.02]",
-      );
-      btn.classList.remove("text-stone-500", "hover:bg-stone-900");
-    } else {
-      btn.classList.remove(
-        "bg-emerald-600",
-        "text-white",
-        "shadow-lg",
-        "scale-[1.02]",
-      );
-      btn.classList.add("text-stone-500", "hover:bg-stone-900");
-    }
+    const isActive = btn.dataset.target === tabId;
+    btn.classList.toggle("bg-emerald-600", isActive);
+    btn.classList.toggle("text-white", isActive);
+    btn.classList.toggle("text-stone-500", !isActive);
   });
   mainContent.innerHTML = templates[tabId] ? templates[tabId]() : "";
   if (tabId === "logs") renderLogs();
   if (tabId === "villagers") renderVillagers();
 }
 
-window.updateVillagerYear = (year) => {
-  state.villager.year = year;
-  renderVillagers();
-};
-
 function init() {
   const healthBarContainer = document.getElementById("progress-bars");
-  const navButtons = document.querySelectorAll(".nav-btn");
   if (healthBarContainer) {
     healthBarContainer.innerHTML = DATABASE.healthMetrics
       .map(
@@ -245,17 +296,16 @@ function init() {
             <div class="flex justify-between text-[9px] font-black uppercase text-stone-600 tracking-tighter">
                 <span>${item.label}</span><span class="text-stone-400">${item.progress}%</span>
             </div>
-            <div class="h-1.5 bg-stone-900 rounded-full overflow-hidden shadow-inner">
-                <div class="h-full ${item.color} transition-all duration-1000 ease-out" style="width: ${item.progress}%"></div>
+            <div class="h-1.5 bg-stone-900 rounded-full overflow-hidden">
+                <div class="h-full ${item.color} transition-all duration-1000" style="width: ${item.progress}%"></div>
             </div>
-        </div>
-    `,
+        </div>`,
       )
       .join("");
   }
-  navButtons.forEach(
-    (btn) => (btn.onclick = () => switchTab(btn.dataset.target)),
-  );
+  document
+    .querySelectorAll(".nav-btn")
+    .forEach((btn) => (btn.onclick = () => switchTab(btn.dataset.target)));
   switchTab("origins");
 }
 

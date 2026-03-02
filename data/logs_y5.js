@@ -1,6 +1,7 @@
 export const logs_y5 = [
   {
     year: 5,
+    phase: 1,
     season: "冬",
     title: "物理レイヤーにおける規格化（Standardization）の完了",
     event:
@@ -11,6 +12,7 @@ export const logs_y5 = [
   },
   {
     year: 5,
+    phase: 1,
     season: "春",
     title: "共有インフラのアップグレード：はねつるべの実装と権限委譲",
     event:
@@ -21,6 +23,7 @@ export const logs_y5 = [
   },
   {
     year: 5,
+    phase: 1,
     season: "春",
     title: "政治的調整によるインフラ実装の完了",
     event:
@@ -29,6 +32,7 @@ export const logs_y5 = [
   },
   {
     year: 5,
+    phase: 1,
     season: "春",
     title: "インフラ提供の戦略的停止と現状維持プロトコルの適用",
     event:
@@ -39,6 +43,7 @@ export const logs_y5 = [
   },
   {
     year: 5,
+    phase: 1,
     season: "春",
     title: "炭化処理済み精密木板を用いた『高度断熱蒸し風呂』の実装",
     event:
@@ -49,6 +54,7 @@ export const logs_y5 = [
   },
   {
     year: 5,
+    phase: 1,
     season: "春",
     title: "高断熱チェンバーの廃熱利用によるドライルーム機能の統合",
     event:
@@ -59,6 +65,7 @@ export const logs_y5 = [
   },
   {
     year: 5,
+    phase: 1,
     season: "春",
     title: "物理的剥離洗浄具（精密スクレイパー）の導入",
     event:
@@ -69,6 +76,7 @@ export const logs_y5 = [
   },
   {
     year: 5,
+    phase: 1,
     season: "春",
     title: "低リソース・高スループット洗浄システムの稼働検証",
     event:
@@ -77,6 +85,7 @@ export const logs_y5 = [
   },
   {
     year: 5,
+    phase: 1,
     season: "春",
     title: "化学的pH制御（スイバ煮汁）を統合した定期的衛生サイクル",
     event:
@@ -87,6 +96,7 @@ export const logs_y5 = [
   },
   {
     year: 5,
+    phase: 1,
     season: "春",
     title: "時代考証を超越した個体生存環境（バイオスフィア）の完成",
     event:
@@ -95,6 +105,7 @@ export const logs_y5 = [
   },
   {
     year: 5,
+    phase: 1,
     season: "夏",
     title: "フローティング構造を採用した高機能ストローハットの構築",
     event:
@@ -105,6 +116,7 @@ export const logs_y5 = [
   },
   {
     year: 5,
+    phase: 1,
     season: "夏",
     title: "幼少期の未完プロジェクト『麦稈帽子』の完全実装（リベンジ完了）",
     event:
@@ -113,6 +125,7 @@ export const logs_y5 = [
   },
   {
     year: 5,
+    phase: 1,
     season: "夏",
     title: "初の発意的非必須プロジェクト：『追憶のストローハット』の完成",
     event:
@@ -121,6 +134,7 @@ export const logs_y5 = [
   },
   {
     year: 5,
+    phase: 1,
     season: "夏",
     title: "ストローハットへの装飾用インターフェース（フラワーホール）の実装",
     event:
@@ -129,6 +143,7 @@ export const logs_y5 = [
   },
   {
     year: 5,
+    phase: 1,
     season: "春",
     title: "第四次増築：衛生管理・高度加工複合モジュールの竣工",
     event:
@@ -137,6 +152,7 @@ export const logs_y5 = [
   },
   {
     year: 5,
+    phase: 1,
     season: "夏",
     title: "防衛トラップによる優良アセット（メスジカ）の確保",
     event:
@@ -145,6 +161,7 @@ export const logs_y5 = [
   },
   {
     year: 5,
+    phase: 1,
     season: "夏",
     title: "対オスイノシシ・トラップ・ループの離脱と歓喜",
     event:
@@ -153,6 +170,7 @@ export const logs_y5 = [
   },
   {
     year: 5,
+    phase: 1,
     season: "夏",
     title: "獲物転換に伴う社会的信用（パブリック・イメージ）の一時的変動",
     event:
@@ -161,6 +179,7 @@ export const logs_y5 = [
   },
   {
     year: 5,
+    phase: 1,
     season: "夏",
     title:
       "高品位内臓（ジビエ・ホルモン）の精密分配と廃棄物処理プロトコルの実施",
@@ -170,6 +189,7 @@ export const logs_y5 = [
   },
   {
     year: 5,
+    phase: 1,
     season: "夏",
     title: "定住5年目：生存戦略から『文明介入』フェーズへの移行確認",
     event:
@@ -178,6 +198,7 @@ export const logs_y5 = [
   },
   {
     year: 5,
+    phase: 1,
     season: "夏",
     title: "鹿革の緊急なめし（脳なめしプロトコル）の実行",
     event:
@@ -186,6 +207,7 @@ export const logs_y5 = [
   },
   {
     year: 5,
+    phase: 1,
     season: "夏",
     title: "低テクノロジー環境下での高度皮革製品（手袋・靴）の試作",
     event:
@@ -194,6 +216,7 @@ export const logs_y5 = [
   },
   {
     year: 5,
+    phase: 1,
     season: "夏",
     title: "熱線裁断（火入れ）による精密皮革コンポーネントの構築",
     event:
@@ -202,6 +225,7 @@ export const logs_y5 = [
   },
   {
     year: 5,
+    phase: 1,
     season: "夏",
     title: "環境との技術的乖離（アノマリー）の発生と固定化",
     event:
@@ -210,6 +234,7 @@ export const logs_y5 = [
   },
   {
     year: 5,
+    phase: 1,
     season: "秋",
     title: "リソース収支報告：安定稼働による余剰の創出",
     event:
@@ -218,6 +243,7 @@ export const logs_y5 = [
   },
   {
     year: 5,
+    phase: 1,
     season: "秋",
     title: "脱脂プロセス刷新のためのベントナイト（白土）探索計画",
     event:
@@ -226,6 +252,7 @@ export const logs_y5 = [
   },
   {
     year: 5,
+    phase: 1,
     season: "秋",
     title: "土着素材（炭・灰・土）への信頼と、東洋的プロセス設計の確立",
     event:
@@ -234,6 +261,7 @@ export const logs_y5 = [
   },
   {
     year: 5,
+    phase: 1,
     season: "秋",
     title: "野生ミツバチ誘引システム（丸太巣箱）のプロトタイプ設営",
     event:
@@ -242,6 +270,7 @@ export const logs_y5 = [
   },
   {
     year: 5,
+    phase: 1,
     season: "秋",
     title: "高純度麦芽糖（水飴）の非公開備蓄および用途限定運用",
     event:
@@ -250,6 +279,7 @@ export const logs_y5 = [
   },
   {
     year: 5,
+    phase: 1,
     season: "冬",
     title: "高活性ハチミツ（フランク・グレード）の品質定義",
     event:
@@ -258,6 +288,7 @@ export const logs_y5 = [
   },
   {
     year: 5,
+    phase: 1,
     season: "冬",
     title: "半屋内型好気性バイオリアクター（高機能おまる）のデプロイ",
     event:
@@ -266,6 +297,7 @@ export const logs_y5 = [
   },
   {
     year: 5,
+    phase: 1,
     season: "冬",
     title: "排泄物分離処理プロトコル（尿分離型バイオリアクター）の確立",
     event:
@@ -274,6 +306,7 @@ export const logs_y5 = [
   },
   {
     year: 5,
+    phase: 1,
     season: "冬",
     title: "ヘアケア・インターフェースの拡充（猪毛ブラシの試作）",
     event:
@@ -282,6 +315,7 @@ export const logs_y5 = [
   },
   {
     year: 5,
+    phase: 1,
     season: "冬",
     title: "野生イノシシ由来ボアブリッスル・ブラシのビルド",
     event:
@@ -290,6 +324,7 @@ export const logs_y5 = [
   },
   {
     year: 5,
+    phase: 1,
     season: "冬",
     title: "乾燥原皮の再起動（リハイドレーション・タンニング）プロセスの検証",
     event:
@@ -298,6 +333,7 @@ export const logs_y5 = [
   },
   {
     year: 5,
+    phase: 1,
     season: "冬",
     title: "皮革副産物からの膠（獣脂接着剤）抽出工程の確立",
     event:
@@ -306,6 +342,7 @@ export const logs_y5 = [
   },
   {
     year: 5,
+    phase: 1,
     season: "冬",
     title: "熱可塑性バインダー（膠）の運用プロトコル策定",
     event:
@@ -314,6 +351,7 @@ export const logs_y5 = [
   },
   {
     year: 5,
+    phase: 1,
     season: "冬",
     title: "膠塗布用デバイスの簡略化（木製スパチュラへの移行）",
     event:
@@ -322,6 +360,7 @@ export const logs_y5 = [
   },
   {
     year: 5,
+    phase: 1,
     season: "冬",
     title: "高張力コンポジット・クロスボウ（Type-HideGlue）の試作・配備",
     event:
@@ -330,6 +369,7 @@ export const logs_y5 = [
   },
   {
     year: 5,
+    phase: 1,
     season: "冬",
     title: "防衛システムの多層化（スリングショット＋弩の連動運用）",
     event:
@@ -338,6 +378,7 @@ export const logs_y5 = [
   },
   {
     year: 5,
+    phase: 1,
     season: "冬",
     title: "防衛ユニットの性能再評価（長距離狙撃能力の逆転）",
     event:

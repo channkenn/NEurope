@@ -1,6 +1,7 @@
 export const logs_y4 = [
   {
     year: 4,
+    phase: 1,
     season: "春",
     title: "環境汚染下における隔離運用（サンドボックス）の限界と葛藤",
     event:
@@ -11,6 +12,7 @@ export const logs_y4 = [
   },
   {
     year: 4,
+    phase: 1,
     season: "春",
     title: "熱処理栗材（焼き入れ木材）による非鉄農具システムの構築",
     event:
@@ -21,6 +23,7 @@ export const logs_y4 = [
   },
   {
     year: 4,
+    phase: 1,
     season: "春",
     title: "フェーズド・デプロイ：35a体制の構築と非対称開拓戦略",
     event:
@@ -31,6 +34,7 @@ export const logs_y4 = [
   },
   {
     year: 4,
+    phase: 1,
     season: "春",
     title: "羊群との同期による未開拓領域の漸進的クレンジング",
     event:
@@ -41,6 +45,7 @@ export const logs_y4 = [
   },
   {
     year: 4,
+    phase: 1,
     season: "春",
     title: "分散型搬送モジュール（羊用パニア）のロールアウト",
     event:
@@ -51,6 +56,7 @@ export const logs_y4 = [
   },
   {
     year: 4,
+    phase: 1,
     season: "春",
     title: "柳細工（ウィッカー）による高剛性パニアの実装",
     event:
@@ -61,6 +67,7 @@ export const logs_y4 = [
   },
   {
     year: 4,
+    phase: 1,
     season: "春",
     title: "鶏群の産卵サイクル安定化と動物性タンパク質供給の最適化",
     event:
@@ -71,6 +78,7 @@ export const logs_y4 = [
   },
   {
     year: 4,
+    phase: 1,
     season: "春",
     title: "鶏群の冗長化（5羽体制）による動物性タンパク質の安定供給",
     event:
@@ -81,6 +89,7 @@ export const logs_y4 = [
   },
   {
     year: 4,
+    phase: 1,
     season: "春",
     title: "卵リソースの熱処理運用と未練（レガシー欲求）のパージ",
     event:
@@ -91,6 +100,7 @@ export const logs_y4 = [
   },
   {
     year: 4,
+    phase: 1,
     season: "春",
     title:
       "卵リソースによるローカル経済圏（エッグ・コイン）の支配とリスクヘッジ",
@@ -106,6 +116,7 @@ export const logs_y4 = [
   },
   {
     year: 4,
+    phase: 1,
     season: "春",
     title: "地質学的知見に基づく砥石の調達と刃物研磨プロトコルの確立",
     event:
@@ -116,6 +127,7 @@ export const logs_y4 = [
   },
   {
     year: 4,
+    phase: 1,
     season: "春",
     title: "次世代雌羊の初産と『羊乳ライブラリ』の実装開始",
     event:
@@ -126,6 +138,7 @@ export const logs_y4 = [
   },
   {
     year: 4,
+    phase: 1,
     season: "春",
     title: "アセットの成熟待機による生存率の最大化（対・粗放経営比較）",
     event:
@@ -136,6 +149,7 @@ export const logs_y4 = [
   },
   {
     year: 4,
+    phase: 1,
     season: "春",
     title: "複合循環型エコシステム（穀物・豆・畜産）の完全同期",
     event:
@@ -146,6 +160,7 @@ export const logs_y4 = [
   },
   {
     year: 4,
+    phase: 1,
     season: "春",
     title: "ブートストラップ・フェーズの完遂とスケーリングへの移行総括",
     event:
@@ -156,6 +171,7 @@ export const logs_y4 = [
   },
   {
     year: 4,
+    phase: 1,
     season: "春",
     title: "耕作面積30aの据え置きと管理密度の深化（リソース最適化）",
     event:
@@ -166,6 +182,7 @@ export const logs_y4 = [
   },
   {
     year: 4,
+    phase: 1,
     season: "春",
     title: "不耕起・草生栽培による反収10俵（1.8t/30a）へのロードマップ策定",
     event:
@@ -176,6 +193,7 @@ export const logs_y4 = [
   },
   {
     year: 4,
+    phase: 1,
     season: "初夏",
     title: "反収10俵超えを目指す『自然演算最大化プロトコル』の起動",
     event:
@@ -186,6 +204,7 @@ export const logs_y4 = [
   },
   {
     year: 4,
+    phase: 1,
     season: "夏",
     title: "浅耕除草から導かれる『極限観察』フェーズへの移行",
     event:
@@ -196,6 +215,7 @@ export const logs_y4 = [
   },
   {
     year: 4,
+    phase: 1,
     season: "夏",
     title: "集中管理区と粗放開拓区（福岡式野生栽培）のハイブリッド運用",
     event:
@@ -206,6 +226,7 @@ export const logs_y4 = [
   },
   {
     year: 4,
+    phase: 1,
     season: "夏",
     title: "深耕における投入エネルギー対効果（ROI）の負の相関確認",
     event:
@@ -216,6 +237,7 @@ export const logs_y4 = [
   },
   {
     year: 4,
+    phase: 1,
     season: "夏",
     title: "歴史的『深耕神話』の科学的再定義と否定",
     event:
@@ -226,6 +248,7 @@ export const logs_y4 = [
   },
   {
     year: 4,
+    phase: 1,
     season: "秋",
     title: "リソース収支報告：安定稼働による余剰の創出",
     event:
@@ -236,6 +259,7 @@ export const logs_y4 = [
   },
   {
     year: 4,
+    phase: 1,
     season: "秋",
     title: "生存者バイアスの拒絶とバイオセキュリティの徹底",
     event:
@@ -246,6 +270,7 @@ export const logs_y4 = [
   },
   {
     year: 4,
+    phase: 1,
     season: "秋",
     title: "環境暴露と免疫リソースの最適化に関する考察",
     event:
@@ -256,6 +281,7 @@ export const logs_y4 = [
   },
   {
     year: 4,
+    phase: 1,
     season: "冬",
     title: "外部コミュニティへの接続と社会的免疫の獲得",
     event:
@@ -266,6 +292,7 @@ export const logs_y4 = [
   },
   {
     year: 4,
+    phase: 1,
     season: "冬",
     title: "対人交流における食物・飲料摂取プロトコルの策定",
     event:
@@ -276,6 +303,7 @@ export const logs_y4 = [
   },
   {
     year: 4,
+    phase: 1,
     season: "冬",
     title: "高水準パーソナルケア・プロトコルの維持",
     event:
@@ -286,6 +314,7 @@ export const logs_y4 = [
   },
   {
     year: 4,
+    phase: 1,
     season: "冬",
     title: "ラノリン（羊毛脂）による高度皮膚バリア実装",
     event:
@@ -296,6 +325,7 @@ export const logs_y4 = [
   },
   {
     year: 4,
+    phase: 1,
     season: "冬",
     title: "階層別スキンケア・プロトコルのデプロイ",
     event:
@@ -306,6 +336,7 @@ export const logs_y4 = [
   },
   {
     year: 4,
+    phase: 1,
     season: "冬",
     title: "綜絖棒（Heddle rod）の精密セッティング",
     event:
@@ -316,6 +347,7 @@ export const logs_y4 = [
   },
   {
     year: 4,
+    phase: 1,
     season: "冬",
     title: "足踏み式綜絖制御（トレッドル・リンク）の実装",
     event:
@@ -326,6 +358,7 @@ export const logs_y4 = [
   },
   {
     year: 4,
+    phase: 1,
     season: "冬",
     title: "リソース制限下における『足踏みリンク』のプロトタイピング",
     event:
@@ -336,6 +369,7 @@ export const logs_y4 = [
   },
   {
     year: 4,
+    phase: 1,
     season: "冬",
     title: "インターフェース・ポリッシング：綜絖棒の真直度向上と恒久潤滑",
     event:
@@ -346,6 +380,7 @@ export const logs_y4 = [
   },
   {
     year: 4,
+    phase: 1,
     season: "冬",
     title: "中繰り船形シャトル（Internal Bobbin Shuttle）のデプロイ",
     event:
@@ -356,6 +391,7 @@ export const logs_y4 = [
   },
   {
     year: 4,
+    phase: 1,
     season: "冬",
     title: "高精度・低摩擦『筬（Reed）』のフルスクラッチ製作",
     event:
@@ -366,6 +402,7 @@ export const logs_y4 = [
   },
   {
     year: 4,
+    phase: 1,
     season: "冬",
     title: "非専用工具下における高度部品製造（アドホック・モデリング）",
     event:
@@ -376,6 +413,7 @@ export const logs_y4 = [
   },
   {
     year: 4,
+    phase: 1,
     season: "冬",
     title: "小脳レベルでの作業自動化と会話プロトコルの確立",
     event:
@@ -386,6 +424,7 @@ export const logs_y4 = [
   },
   {
     year: 4,
+    phase: 1,
     season: "冬",
     title: "超高密度精錬ヘンプ布のプライベート・デプロイ",
     event:
@@ -396,6 +435,7 @@ export const logs_y4 = [
   },
   {
     year: 4,
+    phase: 1,
     season: "冬",
     title: "高密度ヘンプ布の量産と『巻き布式』インナーの実装",
     event:
@@ -406,6 +446,7 @@ export const logs_y4 = [
   },
   {
     year: 4,
+    phase: 1,
     season: "冬",
     title: "組紐（Braiding）による高信頼性結束デバイスの実装",
     event:
@@ -416,6 +457,7 @@ export const logs_y4 = [
   },
   {
     year: 4,
+    phase: 1,
     season: "冬",
     title: "サニタリー・ハイジーン・プロトコルの策定と実装",
     event:
@@ -426,6 +468,7 @@ export const logs_y4 = [
   },
   {
     year: 4,
+    phase: 1,
     season: "冬",
     title: "領主施設（バナリテ）の回避とリソース保全の検証",
     event:
@@ -436,6 +479,7 @@ export const logs_y4 = [
   },
   {
     year: 4,
+    phase: 1,
     season: "冬",
     title: "全粒リソース（ホール・アセット）の完全保持",
     event:
@@ -446,6 +490,7 @@ export const logs_y4 = [
   },
   {
     year: 4,
+    phase: 1,
     season: "秋",
     title: "土壌リソースの収支決算と循環型プロトコルの優位性確定",
     event:
@@ -456,6 +501,7 @@ export const logs_y4 = [
   },
   {
     year: 4,
+    phase: 1,
     season: "秋",
     title: "技術的孤立と社会的擬態の完成",
     event:
@@ -466,6 +512,7 @@ export const logs_y4 = [
   },
   {
     year: 4,
+    phase: 1,
     season: "春",
     title: "野草リソースのフィールドワークとカモフラージュ活動",
     event:
@@ -476,6 +523,7 @@ export const logs_y4 = [
   },
   {
     year: 4,
+    phase: 1,
     season: "冬",
     title: "三位一体（石鹸・クシ・布）による局所衛生最適化の確立",
     event:
@@ -486,6 +534,7 @@ export const logs_y4 = [
   },
   {
     year: 4,
+    phase: 1,
     season: "春",
     title: "有機酸供給源の多角化（スイバからリンゴ酸へのリプレイス計画）",
     event:
@@ -496,6 +545,7 @@ export const logs_y4 = [
   },
   {
     year: 4,
+    phase: 1,
     season: "秋",
     title: "高濃度リンゴ酢をベースとした『工業用酸溶媒』の量産体制確立",
     event:
@@ -506,6 +556,7 @@ export const logs_y4 = [
   },
   {
     year: 4,
+    phase: 1,
     season: "秋",
     title: "10カ年長期果樹園計画（リンゴ・クルミ）の初期デプロイ",
     event:

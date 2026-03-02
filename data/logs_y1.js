@@ -1,6 +1,7 @@
 export const logs_y1 = [
   {
     year: 1,
+    phase: 1,
     season: "春",
     title: "社会的プロトコルの遂行：埋葬と法的生存権の確立",
     event:
@@ -11,6 +12,7 @@ export const logs_y1 = [
   },
   {
     year: 1,
+    phase: 1,
     season: "春",
     title: "煮沸プロトコル：水系感染症の遮断",
     event:
@@ -21,6 +23,7 @@ export const logs_y1 = [
   },
   {
     year: 1,
+    phase: 1,
     season: "春",
     title: "初期生存フェーズにおける暫定衛生プロトコルの記録",
     event:
@@ -31,6 +34,7 @@ export const logs_y1 = [
   },
   {
     year: 1,
+    phase: 1,
     season: "春",
     title: "熱的無害化：雑食動物のスープ化",
     event:
@@ -41,6 +45,7 @@ export const logs_y1 = [
   },
   {
     year: 1,
+    phase: 1,
     season: "春",
     title: "低エントロピー農法：資源集約型開拓",
     event:
@@ -51,6 +56,7 @@ export const logs_y1 = [
   },
   {
     year: 1,
+    phase: 1,
     season: "春",
     title: "重力導水系：樹皮樋による貯水インフラ構築",
     event:
@@ -61,6 +67,7 @@ export const logs_y1 = [
   },
   {
     year: 1,
+    phase: 1,
     season: "春",
     title: "材料工学：栗材の炭化処理による高耐久農具の作製",
     event:
@@ -71,6 +78,7 @@ export const logs_y1 = [
   },
   {
     year: 1,
+    phase: 1,
     season: "夏",
     title: "物流の外部化：羊を用いた多目的運搬系",
     event:
@@ -81,6 +89,7 @@ export const logs_y1 = [
   },
   {
     year: 1,
+    phase: 1,
     season: "春",
     title: "生物学的土地造成：家畜による開拓地プレプロセッシング",
     event:
@@ -91,6 +100,7 @@ export const logs_y1 = [
   },
   {
     year: 1,
+    phase: 1,
     season: "春",
     title: "水資源のカスケード利用：生活排水の家畜転用プロトコル",
     event:
@@ -101,6 +111,7 @@ export const logs_y1 = [
   },
   {
     year: 1,
+    phase: 1,
     season: "夏",
     title: "資源回収：水圏資源の全量摂取・移送",
     event:
@@ -111,6 +122,7 @@ export const logs_y1 = [
   },
   {
     year: 1,
+    phase: 1,
     season: "夏",
     title: "生物資源の転換：バッタ食と液肥システム",
     event:
@@ -121,6 +133,7 @@ export const logs_y1 = [
   },
   {
     year: 1,
+    phase: 1,
     season: "夏",
     title: "熱工学インフラ：完全燃焼炉と長大煙道の構築",
     event:
@@ -131,6 +144,7 @@ export const logs_y1 = [
   },
   {
     year: 1,
+    phase: 1,
     season: "秋",
     title: "情報戦：評価の不一致による資源独占",
     event:
@@ -141,6 +155,7 @@ export const logs_y1 = [
   },
   {
     year: 1,
+    phase: 1,
     season: "秋",
     title: "高分子・化学資源転換：100kg級捕獲個体の全解体",
     event:
@@ -151,6 +166,7 @@ export const logs_y1 = [
   },
   {
     year: 1,
+    phase: 1,
     season: "秋",
     title: "高リスク資源の排除と高密度脂質の集積",
     event:
@@ -161,6 +177,7 @@ export const logs_y1 = [
   },
   {
     year: 1,
+    phase: 1,
     season: "秋",
     title: "熱的切断と重力搬送：大規模木質資源の獲得",
     event: "倒木に火入れを行い所望の長さに破断。丸太を傾斜で転がし住居へ搬送。",
@@ -170,6 +187,7 @@ export const logs_y1 = [
   },
   {
     year: 1,
+    phase: 1,
     season: "秋",
     title: "初年度収支報告およびリソース配分最適化（10a×3種）",
     event:
@@ -180,6 +198,7 @@ export const logs_y1 = [
   },
   {
     year: 1,
+    phase: 1,
     season: "秋",
     title: "定住システム『変な村人』プロトコルの完全確立",
     event:
@@ -190,6 +209,7 @@ export const logs_y1 = [
   },
   {
     year: 1,
+    phase: 1,
     season: "秋",
     title: "資源競合の調整：有機物還元の延期と畜産利用",
     event: "麦わらを敷料および飼料バッファとして確保。羊に搬送させ住居へ集積。",
@@ -199,6 +219,7 @@ export const logs_y1 = [
   },
   {
     year: 1,
+    phase: 1,
     season: "秋",
     title: "政治的技術供与：村長宅への熱効率向上インフラ実装",
     event:
@@ -209,6 +230,7 @@ export const logs_y1 = [
   },
   {
     year: 1,
+    phase: 1,
     season: "秋",
     title: "廃熱回収システム：長大煙道末端における融雪プラントの実装",
     event:
@@ -219,6 +241,7 @@ export const logs_y1 = [
   },
   {
     year: 1,
+    phase: 1,
     season: "冬",
     title: "共生系シェルター運用：バイオヒート活用と炭粉衛生管理",
     event:
@@ -229,6 +252,7 @@ export const logs_y1 = [
   },
   {
     year: 1,
+    phase: 1,
     season: "冬",
     title: "重力インフラ：火入れの大型木臼",
     event: "巨大な倒木を火で焼き切り、位置エネルギーを利用した加工機を製作。",
@@ -238,6 +262,7 @@ export const logs_y1 = [
   },
   {
     year: 1,
+    phase: 1,
     season: "冬",
     title: "生化学性的調理：麦芽粥と籾殻のリサイクル",
     event: "小麦を発芽させモルト粥に加工。咀嚼後の籾殻は鶏の飼料へ転換。",
@@ -247,6 +272,7 @@ export const logs_y1 = [
   },
   {
     year: 1,
+    phase: 1,
     season: "冬",
     title: "情報封鎖と非破壊摂取：パンを焼かない生存戦略",
     event:
@@ -257,6 +283,7 @@ export const logs_y1 = [
   },
   {
     year: 1,
+    phase: 1,
     season: "冬",
     title: "労働の音楽的昇華：定期的脱穀作業のルーチン化",
     event:
@@ -267,6 +294,7 @@ export const logs_y1 = [
   },
   {
     year: 1,
+    phase: 1,
     season: "冬",
     title: "微細加工教育：自己用櫛（くし）の作製と平滑化プロセス",
     event:
@@ -277,6 +305,7 @@ export const logs_y1 = [
   },
   {
     year: 1,
+    phase: 1,
     season: "秋",
     title: "泌乳サイクル導入に向けた繁殖プロトコルの策定",
     event:
@@ -287,6 +316,7 @@ export const logs_y1 = [
   },
   {
     year: 1,
+    phase: 1,
     season: "春",
     title: "野生動物リソースによる初期ビタミンB群欠乏の回避",
     event:
@@ -297,6 +327,7 @@ export const logs_y1 = [
   },
   {
     year: 1,
+    phase: 1,
     season: "冬",
     title: "小動物内臓および昆虫リソースによる冬季ビタミンB群の戦略的供給",
     event:
@@ -307,6 +338,7 @@ export const logs_y1 = [
   },
   {
     year: 1,
+    phase: 1,
     season: "冬",
     title: "アルカリ処理イノシシ肉の調理最適化による栄養・嗜好性の両立",
     event:
@@ -317,6 +349,7 @@ export const logs_y1 = [
   },
   {
     year: 1,
+    phase: 1,
     season: "冬",
     title: "非精製穀物（丸粒・引き割り）によるビタミンB群のホール摂取",
     event:
