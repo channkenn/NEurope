@@ -38,33 +38,54 @@ window.updateVillagerYear = (year) => {
 // --- UI テンプレート ---
 
 const templates = {
+  // script.js の templates.origins を拡張
   origins: () => {
-    const { origins } = DATABASE;
+    const { origins, enforcedRules } = DATABASE; // enforcedRulesを抽出
     return `
-            <div class="animate-slide-in space-y-8">
-                <div class="glass-panel p-10 rounded-3xl border-l-8 border-l-red-600 shadow-2xl">
-                    <h2 class="text-3xl font-black text-stone-100 uppercase tracking-tighter mb-2">起源：プロジェクト・スタート</h2>
-                    <p class="text-red-500 font-bold text-[10px] tracking-widest uppercase border-b border-stone-800 pb-4 mb-6">${origins.timeline}</p>
-                    <p class="text-lg text-stone-300 italic mb-8 border-l-2 border-stone-700 pl-6 leading-relaxed">${origins.situation}</p>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        ${origins.assets
-                          .map(
-                            (asset) => `
-                            <div class="bg-stone-900/50 p-6 rounded-2xl border border-stone-800">
-                                <div class="flex justify-between items-center mb-2">
-                                    <span class="text-[10px] font-black text-stone-500 uppercase tracking-widest">${asset.label}</span>
-                                    <span class="text-[10px] px-2 py-0.5 rounded bg-stone-800 text-stone-400 border border-stone-700">${asset.status}</span>
-                                </div>
-                                <div class="text-xl font-bold text-stone-200">${asset.value}</div>
+        <div class="animate-slide-in space-y-8">
+            <div class="glass-panel p-10 rounded-3xl border-l-8 border-l-red-600 shadow-2xl">
+                <h2 class="text-3xl font-black text-stone-100 uppercase tracking-tighter mb-2">起源：プロジェクト・スタート</h2>
+                <p class="text-red-500 font-bold text-[10px] tracking-widest uppercase border-b border-stone-800 pb-4 mb-6">${origins.timeline}</p>
+                <p class="text-lg text-stone-300 italic mb-8 border-l-2 border-stone-700 pl-6 leading-relaxed">${origins.situation}</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    ${origins.assets
+                      .map(
+                        (asset) => `
+                        <div class="bg-stone-900/50 p-6 rounded-2xl border border-stone-800">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-[10px] font-black text-stone-500 uppercase tracking-widest">${asset.label}</span>
+                                <span class="text-[10px] px-2 py-0.5 rounded bg-stone-800 text-stone-400 border border-stone-700">${asset.status}</span>
                             </div>
-                        `,
-                          )
-                          .join("")}
-                    </div>
+                            <div class="text-xl font-bold text-stone-200">${asset.value}</div>
+                        </div>
+                    `,
+                      )
+                      .join("")}
                 </div>
-            </div>`;
-  },
+            </div>
 
+            <div class="glass-panel p-10 rounded-3xl border-l-8 border-l-amber-600 shadow-2xl bg-stone-900/20">
+                <h3 class="text-xl font-black text-stone-100 uppercase tracking-tighter mb-6">System Rules: 土地・社会の強制制約</h3>
+                <div class="space-y-4">
+                    ${enforcedRules
+                      .map(
+                        (rule) => `
+                        <div class="p-4 rounded-xl bg-stone-950/50 border border-stone-800">
+                            <div class="flex justify-between mb-1">
+                                <span class="text-[10px] font-black text-amber-500 uppercase">${rule.label}</span>
+                            </div>
+                            <p class="text-sm text-stone-300 mb-2">${rule.rule}</p>
+                            <div class="text-[11px] text-emerald-500 italic border-t border-stone-800 pt-2">
+                                <span class="font-bold">STRATEGY:</span> ${rule.oni_san_strategy || rule.oni_san_note}
+                            </div>
+                        </div>
+                    `,
+                      )
+                      .join("")}
+                </div>
+            </div>
+        </div>`;
+  },
   logs: () => {
     return `
     <div class="animate-slide-in space-y-6">
