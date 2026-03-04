@@ -161,6 +161,16 @@ const templates = {
           <div id="villager-grid" class="grid grid-cols-1 md:grid-cols-2 gap-6"></div>
       </div>`;
   },
+  data: () => {
+    return `
+      <div class="animate-slide-in space-y-6">
+          <div class="flex justify-between items-center mb-4">
+              <h2 class="text-2xl font-black text-stone-100 uppercase tracking-tighter">Technology Tree</h2>
+              <span class="text-[10px] text-emerald-500 font-bold border border-emerald-900 px-3 py-1 rounded-full uppercase">Engineering Log</span>
+          </div>
+          <div id="tech-grid" class="grid grid-cols-1 md:grid-cols-2 gap-4"></div>
+      </div>`;
+  },
 };
 
 // --- 描画エンジン ---
@@ -292,7 +302,41 @@ function renderVillagers() {
     )
     .join("");
 }
+// --- 描画エンジンに追加 ---
+function renderTech() {
+  const container = document.getElementById("tech-grid");
+  if (!container) return;
 
+  container.innerHTML = DATABASE.techStack
+    .map(
+      (tech) => `
+    <div class="glass-panel p-5 rounded-2xl border border-stone-800 hover:border-emerald-500/50 transition-colors">
+        <div class="flex justify-between items-start mb-3">
+            <span class="text-[9px] font-black text-stone-500 uppercase tracking-widest">${tech.category}</span>
+            <span class="text-[9px] px-2 py-0.5 rounded bg-stone-900 text-emerald-400 border border-emerald-900/50">${tech.status}</span>
+        </div>
+        <h3 class="text-lg font-bold text-stone-100 mb-2">${tech.name}</h3>
+        <p class="text-xs text-stone-400 mb-4 leading-relaxed">${tech.description}</p>
+        
+        <div class="space-y-3">
+            <div class="flex justify-between text-[9px] font-bold text-stone-500 uppercase">
+                <span>Completion</span>
+                <span>${tech.level}%</span>
+            </div>
+            <div class="h-1 bg-stone-900 rounded-full overflow-hidden">
+                <div class="h-full bg-emerald-500" style="width: ${tech.level}%"></div>
+            </div>
+            <div class="bg-stone-950/50 p-3 rounded-lg border border-stone-800 mt-2">
+                <p class="text-[10px] text-emerald-400/80 italic leading-relaxed">
+                    <span class="font-bold mr-1">DESIGN INTENT:</span>${tech.logic}
+                </p>
+            </div>
+        </div>
+    </div>
+  `,
+    )
+    .join("");
+}
 function switchTab(tabId) {
   const mainContent = document.getElementById("main-content");
   const navButtons = document.querySelectorAll(".nav-btn");
@@ -305,6 +349,7 @@ function switchTab(tabId) {
   mainContent.innerHTML = templates[tabId] ? templates[tabId]() : "";
   if (tabId === "logs") renderLogs();
   if (tabId === "villagers") renderVillagers();
+  if (tabId === "data") renderTech(); // 追加
 }
 
 function init() {
