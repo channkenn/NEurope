@@ -14,8 +14,13 @@ body {
   background: rgba(28, 25, 23, 0.7);
   backdrop-filter: blur(16px);
   border: 1px solid rgba(68, 64, 60, 0.4);
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease;
 }
-
+.glass-panel:hover {
+  transform: translateY(-2px);
+}
 /* フィルタチップ */
 .filter-chip {
   padding: 4px 10px;

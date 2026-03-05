@@ -7,10 +7,17 @@ import { DATABASE } from "./data.js";
 
 const state = {
   log: { phase: 1, year: "all", season: "all", tag: "all", sort: "asc" },
-  villager: { year: 4, sort: "social" },
-  resource: { year: 1, season: "春", sort: "category" },
+  villager: { year: 1, sort: "social" },
+  resource: { category: "all", sort: "year_asc" }, // 絞り込みとソートの状態を追加
 };
-
+// 2. グローバル・インターフェースに更新用関数を追加
+window.updateTechFilter = () => {
+  state.resource.category = document.getElementById(
+    "filter-tech-category",
+  ).value;
+  state.resource.sort = document.getElementById("filter-tech-sort").value;
+  renderTech();
+};
 // --- グローバル・インターフェース ---
 
 window.filterByTag = (tagName) => {
@@ -162,12 +169,34 @@ const templates = {
       </div>`;
   },
   data: () => {
+    const categories = [...new Set(DATABASE.techStack.map((t) => t.category))];
     return `
       <div class="animate-slide-in space-y-6">
           <div class="flex justify-between items-center mb-4">
               <h2 class="text-2xl font-black text-stone-100 uppercase tracking-tighter">Technology Tree</h2>
               <span class="text-[10px] text-emerald-500 font-bold border border-emerald-900 px-3 py-1 rounded-full uppercase">Engineering Log</span>
           </div>
+
+          <div class="flex flex-wrap gap-4 items-end bg-stone-900/50 p-6 rounded-2xl border border-stone-800">
+              <div class="space-y-2">
+                  <label class="text-[10px] font-black uppercase text-stone-500 tracking-widest">領域カテゴリ</label>
+                  <select id="filter-tech-category" onchange="updateTechFilter()" 
+                          class="bg-stone-950 border border-stone-700 text-stone-300 text-xs rounded-lg block w-48 p-2.5 outline-none focus:border-emerald-500 transition-colors">
+                      <option value="all">全てのカテゴリ</option>
+                      ${categories.map((cat) => `<option value="${cat}" ${state.resource.category === cat ? "selected" : ""}>${cat}</option>`).join("")}
+                  </select>
+              </div>
+              <div class="space-y-2 ml-auto">
+                  <label class="text-[10px] font-black uppercase text-stone-500 tracking-widest">ソート</label>
+                  <select id="filter-tech-sort" onchange="updateTechFilter()" 
+                          class="bg-stone-950 border border-stone-700 text-stone-300 text-xs rounded-lg block w-40 p-2.5 outline-none focus:border-emerald-500 transition-colors">
+                      <option value="year_asc" ${state.resource.sort === "year_asc" ? "selected" : ""}>達成年 (昇順)</option>
+                      <option value="year_desc" ${state.resource.sort === "year_desc" ? "selected" : ""}>達成年 (降順)</option>
+                      <option value="level_desc" ${state.resource.sort === "level_desc" ? "selected" : ""}>習得レベル (高)</option>
+                  </select>
+              </div>
+          </div>
+
           <div id="tech-grid" class="grid grid-cols-1 md:grid-cols-2 gap-4"></div>
       </div>`;
   },
@@ -302,35 +331,46 @@ function renderVillagers() {
     )
     .join("");
 }
-// --- 描画エンジンに追加 ---
+// 4. renderTech 関数のロジック実装
 function renderTech() {
   const container = document.getElementById("tech-grid");
   if (!container) return;
 
-  container.innerHTML = DATABASE.techStack
+  let filtered = [...DATABASE.techStack];
+
+  // フィルタリング
+  if (state.resource.category !== "all") {
+    filtered = filtered.filter((t) => t.category === state.resource.category);
+  }
+
+  // ソート
+  filtered.sort((a, b) => {
+    if (state.resource.sort === "year_asc")
+      return a.achievedYear - b.achievedYear;
+    if (state.resource.sort === "year_desc")
+      return b.achievedYear - a.achievedYear;
+    if (state.resource.sort === "level_desc") return b.level - a.level;
+    return 0;
+  });
+
+  container.innerHTML = filtered
     .map(
       (tech) => `
-    <div class="glass-panel p-5 rounded-2xl border border-stone-800 hover:border-emerald-500/50 transition-colors">
-        <div class="flex justify-between items-start mb-3">
-            <span class="text-[9px] font-black text-stone-500 uppercase tracking-widest">${tech.category}</span>
-            <span class="text-[9px] px-2 py-0.5 rounded bg-stone-900 text-emerald-400 border border-emerald-900/50">${tech.status}</span>
+    <div class="glass-panel p-6 rounded-2xl border border-stone-800 hover:border-emerald-500/50 transition-all group">
+        <div class="flex justify-between items-start mb-4">
+            <div class="space-y-1">
+                <span class="text-[9px] font-black text-emerald-500 uppercase tracking-widest">${tech.category}</span>
+                <h3 class="text-lg font-bold text-stone-200 group-hover:text-emerald-400 transition-colors">${tech.name}</h3>
+            </div>
+            <div class="text-right">
+                <div class="text-[10px] font-black text-stone-500 uppercase">Year ${tech.achievedYear}</div>
+                <div class="text-xl font-black text-stone-300">${tech.level}%</div>
+            </div>
         </div>
-        <h3 class="text-lg font-bold text-stone-100 mb-2">${tech.name}</h3>
-        <p class="text-xs text-stone-400 mb-4 leading-relaxed">${tech.description}</p>
-        
-        <div class="space-y-3">
-            <div class="flex justify-between text-[9px] font-bold text-stone-500 uppercase">
-                <span>Completion</span>
-                <span>${tech.level}%</span>
-            </div>
-            <div class="h-1 bg-stone-900 rounded-full overflow-hidden">
-                <div class="h-full bg-emerald-500" style="width: ${tech.level}%"></div>
-            </div>
-            <div class="bg-stone-950/50 p-3 rounded-lg border border-stone-800 mt-2">
-                <p class="text-[10px] text-emerald-400/80 italic leading-relaxed">
-                    <span class="font-bold mr-1">DESIGN INTENT:</span>${tech.logic}
-                </p>
-            </div>
+        <p class="text-sm text-stone-400 mb-4 leading-relaxed line-clamp-2">${tech.description}</p>
+        <div class="p-3 bg-stone-950/50 rounded-lg border border-stone-800/50">
+            <span class="text-[9px] font-black text-stone-600 uppercase block mb-1">Logic / Why</span>
+            <p class="text-[11px] text-stone-500 italic">${tech.logic}</p>
         </div>
     </div>
   `,
