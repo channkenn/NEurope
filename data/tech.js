@@ -6,7 +6,8 @@
 export const techStack = [
   {
     id: "hvac-01",
-    category: "熱力学・住環境",
+    category: "05. 生活・社会システム",
+    subCategory: "熱力学・住環境",
     name: "高効率ロケットストーブ & 蓄熱煙道システム",
     level: 85,
     status: "Active",
@@ -18,7 +19,8 @@ export const techStack = [
   },
   {
     id: "hvac-02",
-    category: "生活基盤",
+    category: "01. 生存基盤・公衆衛生",
+    subCategory: "生活基盤",
     name: "煙道直結型 融雪・給湯用鍋置き",
     level: 90,
     status: "Active",
@@ -30,7 +32,8 @@ export const techStack = [
   },
   {
     id: "eng-02",
-    category: "精密工学・母性原理",
+    category: "03. 機械・物理工学",
+    subCategory: "精密工学・母性原理",
     name: "三面摺りによる高精度定盤 (Surface Plate)",
     level: 30,
     status: "In Progress",
@@ -43,6 +46,7 @@ export const techStack = [
   {
     id: "arch-01",
     category: "建築工学・材料科学",
+    subCategory: "建築工学・材料科学",
     name: "ヘンプコンポジット土壁（小舞・繊維補強）",
     level: 70,
     status: "Active",
@@ -54,7 +58,8 @@ export const techStack = [
   },
   {
     id: "food-01",
-    category: "衛生管理・資源循環",
+    category: "01. 生存基盤・公衆衛生",
+    subCategory: "衛生管理・資源循環",
     name: "小動物（ジビエ）の高度利用プロトコル",
     level: 100,
     status: "Active",
@@ -66,7 +71,8 @@ export const techStack = [
   },
   {
     id: "food-04",
-    category: "食品化学・保存食",
+    category: "05. 生活・社会システム",
+    subCategory: "食品化学・保存食",
     name: "ドングリのアルカリ灰汁抜きプロトコル",
     level: 100,
     status: "Active",
@@ -78,7 +84,8 @@ export const techStack = [
   },
   {
     id: "food-03",
-    category: "衛生管理・代替タンパク質",
+    category: "01. 生存基盤・公衆衛生",
+    subCategory: "衛生管理・代替タンパク質",
     name: "微小動物（昆虫・軟体動物）の解毒・加工工程",
     level: 100,
     status: "Active",
@@ -91,6 +98,7 @@ export const techStack = [
   {
     id: "chem-01",
     category: "応用化学・分離工学",
+    subCategory: "応用化学・分離工学",
     name: "多段階分画製塩システム",
     level: 65,
     status: "Active",
@@ -102,7 +110,8 @@ export const techStack = [
   },
   {
     id: "agri-02",
-    category: "農業土木・土壌化学",
+    category: "02. 農業・環境工学",
+    subCategory: "農業土木・土壌化学",
     name: "休耕地高度利用プロトコル",
     level: 55,
     status: "Active",
@@ -114,7 +123,8 @@ export const techStack = [
   },
   {
     id: "agri-04",
-    category: "資源循環・土壌化学",
+    category: "01. 生存基盤・公衆衛生",
+    subCategory: "資源循環・土壌化学",
     name: "高純度人糞尿堆肥化 & 追肥（液肥）システム",
     level: 95,
     status: "Active",
@@ -126,7 +136,8 @@ export const techStack = [
   },
   {
     id: "agri-05",
-    category: "農業土木・植物生理",
+    category: "02. 農業・環境工学",
+    subCategory: "農業土木・植物生理",
     name: "浅耕疎植条間クローバー草生栽培",
     level: 80,
     status: "Active",
@@ -138,7 +149,8 @@ export const techStack = [
   },
   {
     id: "agri-06",
-    category: "社会工学・土壌保存",
+    category: "02. 農業・環境工学",
+    subCategory: "社会工学・土壌保存",
     name: "共同労働における『耕起パス』戦略",
     level: 100,
     status: "Active",
@@ -151,6 +163,7 @@ export const techStack = [
   {
     id: "arch-02",
     category: "林業工学・材料調整",
+    subCategory: "林業工学・材料調整",
     name: "立木乾燥法（環状剥皮）と林内放牧",
     level: 85,
     status: "Active",
@@ -162,7 +175,8 @@ export const techStack = [
   },
   {
     id: "med-01",
-    category: "公衆衛生・天然薬理",
+    category: "01. 生存基盤・公衆衛生",
+    subCategory: "公衆衛生・天然薬理",
     name: "柳の生体管理 & 薬用歯ブラシ（ウィロー・スティック）",
     level: 100,
     status: "Active",
@@ -174,7 +188,8 @@ export const techStack = [
   },
   {
     id: "logi-01",
-    category: "物流工学・家畜利用",
+    category: "03. 機械・物理工学",
+    subCategory: "物流工学・家畜利用",
     name: "羊用パニア（振り分け荷袋）による軽輸送システム",
     level: 100,
     status: "Active",
@@ -186,7 +201,8 @@ export const techStack = [
   },
   {
     id: "logi-02",
-    category: "資源回収・環境工学",
+    category: "01. 生存基盤・公衆衛生",
+    subCategory: "資源回収・環境工学",
     name: "動的パス・リソース回収 (Dynamic Path Recovery)",
     level: 100,
     status: "Active",
@@ -198,7 +214,8 @@ export const techStack = [
   },
   {
     id: "eng-03",
-    category: "精密工学・母性原理",
+    category: "03. 機械・物理工学",
+    subCategory: "精密工学・母性原理",
     name: "高精度Vブロック & L字直角定規",
     level: 45,
     status: "In Progress",
@@ -210,7 +227,8 @@ export const techStack = [
   },
   {
     id: "eng-04",
-    category: "精密工学・回転体",
+    category: "03. 機械・物理工学",
+    subCategory: "精密工学・回転体",
     name: "Vブロック転写法による真円棒の生成",
     level: 50,
     status: "In Progress",
@@ -222,7 +240,8 @@ export const techStack = [
   },
   {
     id: "eng-05",
-    category: "精密工学・工作機械",
+    category: "03. 機械・物理工学",
+    subCategory: "精密工学・工作機械",
     name: "母性原理旋盤 Ver.2 (高精度滑り台式旋盤)",
     level: 60,
     status: "Active",
@@ -234,7 +253,8 @@ export const techStack = [
   },
   {
     id: "eng-06",
-    category: "精密工学・機構学",
+    category: "03. 機械・物理工学",
+    subCategory: "精密工学・機構学",
     name: "精密ローラーベアリング（転がり軸受）",
     level: 70,
     status: "Active",
@@ -246,7 +266,8 @@ export const techStack = [
   },
   {
     id: "eng-07",
-    category: "精密工学・工作機械",
+    category: "03. 機械・物理工学",
+    subCategory: "精密工学・工作機械",
     name: "慣性駆動式精密旋盤 Ver.3",
     level: 85,
     status: "Active",
@@ -258,7 +279,8 @@ export const techStack = [
   },
   {
     id: "eng-08",
-    category: "精密工学・締結機構",
+    category: "03. 機械・物理工学",
+    subCategory: "精密工学・締結機構",
     name: "高精度角ネジ（木製・金属製リードスクリュー）",
     level: 75,
     status: "Active",
@@ -270,7 +292,8 @@ export const techStack = [
   },
   {
     id: "tool-04",
-    category: "材料工学・超精密加工",
+    category: "04. 材料・繊維工学",
+    subCategory: "材料工学・超精密加工",
     name: "完全平面研磨石器（フリント・蛇紋岩）",
     level: 90,
     status: "Active",
@@ -283,6 +306,7 @@ export const techStack = [
   {
     id: "tool-05",
     category: "農業工学・材料複合化",
+    subCategory: "農業工学・材料複合化",
     name: "超精密フリントチップ大鎌（ハイブリッド・サイス）",
     level: 95,
     status: "Active",
@@ -294,7 +318,8 @@ export const techStack = [
   },
   {
     id: "food-05",
-    category: "食品化学・生存基盤",
+    category: "05. 生活・社会システム",
+    subCategory: "食品化学・生存基盤",
     name: "広葉樹内皮（形成層・師部）のデンプン抽出・加工プロトコル",
     level: 100,
     status: "Active",
@@ -306,7 +331,8 @@ export const techStack = [
   },
   {
     id: "tool-01",
-    category: "材料工学・切削工具",
+    category: "04. 材料・繊維工学",
+    subCategory: "材料工学・切削工具",
     name: "三面摺りフリント包丁 (High-Precision Flint Knife)",
     level: 95,
     status: "Active",
@@ -318,7 +344,8 @@ export const techStack = [
   },
   {
     id: "tool-02",
-    category: "材料工学・打撃工具",
+    category: "04. 材料・繊維工学",
+    subCategory: "材料工学・打撃工具",
     name: "鏡面研磨・蛇紋岩手斧 (Polished Serpentine Hand-Axe)",
     level: 90,
     status: "Active",
@@ -330,7 +357,8 @@ export const techStack = [
   },
   {
     id: "med-01",
-    category: "公衆衛生・天然薬理",
+    category: "01. 生存基盤・公衆衛生",
+    subCategory: "公衆衛生・天然薬理",
     name: "柳の生体管理 & 薬用歯ブラシ（ウィロー・スティック）",
     level: 100,
     status: "Active",
@@ -343,6 +371,7 @@ export const techStack = [
   {
     id: "tool-06",
     category: "農業工学・物流最適化",
+    subCategory: "農業工学・物流最適化",
     name: "収穫用大鎌アタッチメント：穀物クレイドル（Grain Cradle）",
     level: 95,
     status: "Active",
@@ -354,7 +383,8 @@ export const techStack = [
   },
   {
     id: "arch-03",
-    category: "材料加工・熱力学",
+    category: "04. 材料・繊維工学",
+    subCategory: "材料加工・熱力学",
     name: "炭火とニワトコ火吹筒による熱援用切断（炭火火入れ切断）",
     level: 85,
     status: "Active",
@@ -366,7 +396,8 @@ export const techStack = [
   },
   {
     id: "logi-03",
-    category: "物流工学・重力利用",
+    category: "03. 機械・物理工学",
+    subCategory: "物流工学・重力利用",
     name: "円筒木材の回転搬送（ローリング・ログ・トランスポート）",
     level: 100,
     status: "Active",
@@ -378,7 +409,8 @@ export const techStack = [
   },
   {
     id: "arch-04",
-    category: "材料工学・構造解析",
+    category: "04. 材料・繊維工学",
+    subCategory: "材料工学・構造解析",
     name: "楔（くさび）による縦割り製材プロトコル",
     level: 90,
     status: "Active",
@@ -390,7 +422,8 @@ export const techStack = [
   },
   {
     id: "agri-07",
-    category: "資源循環・環境工学",
+    category: "01. 生存基盤・公衆衛生",
+    subCategory: "資源循環・環境工学",
     name: "樹皮（バーク）の多段階利用プロトコル",
     level: 100,
     status: "Active",
@@ -402,7 +435,8 @@ export const techStack = [
   },
   {
     id: "agri-08",
-    category: "農業土木・土壌化学",
+    category: "02. 農業・環境工学",
+    subCategory: "農業土木・土壌化学",
     name: "休耕地への誘引植生 & 糞尿トラップ（家畜滞在延長）",
     level: 90,
     status: "Active",
@@ -414,7 +448,8 @@ export const techStack = [
   },
   {
     id: "soc-01",
-    category: "社会工学・リスク管理",
+    category: "02. 農業・環境工学",
+    subCategory: "社会工学・リスク管理",
     name: "家畜誘引におけるヘイト管理プロトコル",
     level: 100,
     status: "Active",
@@ -426,7 +461,8 @@ export const techStack = [
   },
   {
     id: "std-01",
-    category: "度量衡・物理学",
+    category: "05. 生活・社会システム",
+    subCategory: "度量衡・物理学",
     name: "重力振り子式・標準尺（推定99.4cm：秒振子）",
     level: 100,
     status: "Active",
@@ -438,7 +474,8 @@ export const techStack = [
   },
   {
     id: "std-02",
-    category: "度量衡・熱力学",
+    category: "05. 生活・社会システム",
+    subCategory: "度量衡・熱力学",
     name: "相転移基準・標準体積・重量システム",
     level: 100,
     status: "Active",
@@ -450,7 +487,8 @@ export const techStack = [
   },
   {
     id: "eng-09",
-    category: "精密工学・機構学",
+    category: "03. 機械・物理工学",
+    subCategory: "精密工学・機構学",
     name: "標準尺準拠・高速糸車（スピニングホイール）",
     level: 80,
     status: "Active",
@@ -462,7 +500,8 @@ export const techStack = [
   },
   {
     id: "eng-10",
-    category: "精密工学・織造",
+    category: "03. 機械・物理工学",
+    subCategory: "精密工学・織造",
     name: "垂直型おもり式織機（ワープウェイト・ルーム）",
     level: 85,
     status: "Active",
@@ -474,7 +513,8 @@ export const techStack = [
   },
   {
     id: "eng-11",
-    category: "精密工学・繊維機械",
+    category: "03. 機械・物理工学",
+    subCategory: "精密工学・繊維機械",
     name: "ベアリング搭載型・4連並列紡錘機（クアッド・スピンドル）",
     level: 90,
     status: "Active",
@@ -486,7 +526,8 @@ export const techStack = [
   },
   {
     id: "eng-12",
-    category: "機構学・織造",
+    category: "03. 機械・物理工学",
+    subCategory: "機構学・織造",
     name: "足踏み式開口装置（踏木）＆ 振り子式ビーター搭載織機",
     level: 95,
     status: "Active",
@@ -498,7 +539,8 @@ export const techStack = [
   },
   {
     id: "eng-13",
-    category: "物流工学・高速化",
+    category: "03. 機械・物理工学",
+    subCategory: "物流工学・高速化",
     name: "ボビン交換式・舟形シャトル（フライング・シャトル前駆体）",
     level: 90,
     status: "Active",
@@ -510,7 +552,8 @@ export const techStack = [
   },
   {
     id: "chem-02",
-    category: "繊維化学・界面工学",
+    category: "04. 材料・繊維工学",
+    subCategory: "繊維化学・界面工学",
     name: "低温アルカリ精錬（ヘンプ・マーセライズ加工プロトコル）",
     level: 95,
     status: "Active",
@@ -522,7 +565,8 @@ export const techStack = [
   },
   {
     id: "chem-03",
-    category: "界面化学・分離工学",
+    category: "04. 材料・繊維工学",
+    subCategory: "界面化学・分離工学",
     name: "炭粉吸着法によるウール脱脂プロトコル",
     level: 95,
     status: "Active",
@@ -534,7 +578,8 @@ export const techStack = [
   },
   {
     id: "chem-04",
-    category: "界面化学・コロイド工学",
+    category: "04. 材料・繊維工学",
+    subCategory: "界面化学・コロイド工学",
     name: "ベントナイト（モンモリロナイト）による高度ウール脱脂",
     level: 100,
     status: "Active",
@@ -546,7 +591,8 @@ export const techStack = [
   },
   {
     id: "chem-05",
-    category: "界面化学・資源回収",
+    category: "04. 材料・繊維工学",
+    subCategory: "界面化学・資源回収",
     name: "吸着剤からのラノリン（羊毛脂）熱抽出・分画工程",
     level: 100,
     status: "Active",
@@ -558,7 +604,8 @@ export const techStack = [
   },
   {
     id: "food-06",
-    category: "衛生管理・資源回収",
+    category: "01. 生存基盤・公衆衛生",
+    subCategory: "衛生管理・資源回収",
     name: "食肉・内臓の高度分画処理プロトコル",
     level: 100,
     status: "Active",
@@ -570,7 +617,8 @@ export const techStack = [
   },
   {
     id: "chem-06",
-    category: "界面化学・油脂工学",
+    category: "04. 材料・繊維工学",
+    subCategory: "界面化学・油脂工学",
     name: "灰汁反応による精製タロウおよびカリ石鹸の生成",
     level: 95,
     status: "Active",
@@ -582,7 +630,8 @@ export const techStack = [
   },
   {
     id: "mat-01",
-    category: "材料科学・構造接着",
+    category: "04. 材料・繊維工学",
+    subCategory: "材料科学・構造接着",
     name: "脳漿・皮加工（鞣し）および軟骨抽出・膠（ニカワ）",
     level: 90,
     status: "Active",
@@ -594,7 +643,8 @@ export const techStack = [
   },
   {
     id: "food-07",
-    category: "食品保存・応用化学",
+    category: "05. 生活・社会システム",
+    subCategory: "食品保存・応用化学",
     name: "赤身肉の灰まぶし保存加工（灰乾燥法）",
     level: 100,
     status: "Active",
@@ -606,7 +656,8 @@ export const techStack = [
   },
   {
     id: "agri-12",
-    category: "農本工学・リソース最適化",
+    category: "02. 農業・環境工学",
+    subCategory: "農本工学・リソース最適化",
     name: "段階的スケールアップ播種プロトコル (30a/60a/100a)",
     level: 95,
     status: "Active",
@@ -618,7 +669,8 @@ export const techStack = [
   },
   {
     id: "agri-13",
-    category: "農本工学・遺伝的アルゴリズム",
+    category: "02. 農業・環境工学",
+    subCategory: "農本工学・遺伝的アルゴリズム",
     name: "多粒播種・最強個体選抜リファクタリング",
     level: 90,
     status: "Active",
@@ -630,7 +682,8 @@ export const techStack = [
   },
   {
     id: "agri-14",
-    category: "農本工学・リソース最適化",
+    category: "02. 農業・環境工学",
+    subCategory: "農本工学・リソース最適化",
     name: "低密度・高効率（疎植）による歩留まり向上",
     level: 100,
     status: "Active",
@@ -642,7 +695,8 @@ export const techStack = [
   },
   {
     id: "agri-15",
-    category: "農本工学・生産管理",
+    category: "02. 農業・環境工学",
+    subCategory: "農本工学・生産管理",
     name: "高効率疎植による収穫量最適化 (3年目以降250kg/10a達成)",
     level: 100,
     status: "Active",
@@ -655,6 +709,7 @@ export const techStack = [
   {
     id: "agri-21",
     category: "資源生成・バックアップ",
+    subCategory: "資源生成・バックアップ",
     name: "休耕地復旧用・多様性種子ストレージ (50a)",
     level: 95,
     status: "Active",
@@ -666,7 +721,8 @@ export const techStack = [
   },
   {
     id: "agri-22",
-    category: "農本工学・土壌エコシステム",
+    category: "02. 農業・環境工学",
+    subCategory: "農本工学・土壌エコシステム",
     name: "ゲイブ・ブラウン流・多種同時デプロイ（カオス・カバース）",
     level: 100,
     status: "Active",
@@ -678,7 +734,8 @@ export const techStack = [
   },
   {
     id: "agri-23",
-    category: "共同体プロトコル・物理レイヤー管理",
+    category: "05. 生活・社会システム",
+    subCategory: "共同体プロトコル・物理レイヤー管理",
     name: "不耕起(No-Till)維持のための『労働等価交換』戦略",
     level: 100,
     status: "Active",
@@ -690,7 +747,8 @@ export const techStack = [
   },
   {
     id: "soc-05",
-    category: "共同体・経済エコシステム",
+    category: "05. 生活・社会システム",
+    subCategory: "共同体・経済エコシステム",
     name: "収穫期・分業報酬システム（ハーベスト・シェア）",
     level: 95,
     status: "Active",
@@ -702,7 +760,8 @@ export const techStack = [
   },
   {
     id: "survive-05",
-    category: "生存戦略・リスク管理",
+    category: "05. 生活・社会システム",
+    subCategory: "生存戦略・リスク管理",
     name: "未知の生物学的リスク(毒キノコ)の排除",
     level: 100,
     status: "Active",
@@ -714,7 +773,8 @@ export const techStack = [
   },
   {
     id: "food-10",
-    category: "生活工学・調理化学",
+    category: "05. 生活・社会システム",
+    subCategory: "生活工学・調理化学",
     name: "木灰による穀物アルカリ処理（ニシュタマリゼーション）",
     level: 90,
     status: "Active",
@@ -726,7 +786,8 @@ export const techStack = [
   },
   {
     id: "chem-08",
-    category: "生活工学・応用化学",
+    category: "05. 生活・社会システム",
+    subCategory: "生活工学・応用化学",
     name: "有機酸の多層的確保とpHデバッギング",
     level: 90,
     status: "Active",
@@ -738,7 +799,8 @@ export const techStack = [
   },
   {
     id: "chem-09",
-    category: "生活工学・応用化学",
+    category: "05. 生活・社会システム",
+    subCategory: "生活工学・応用化学",
     name: "高効率・酢酸生成（アセティック・ジェネレーター）",
     level: 95,
     status: "Active",
@@ -750,7 +812,8 @@ export const techStack = [
   },
   {
     id: "food-13",
-    category: "生活工学・食品化学",
+    category: "05. 生活・社会システム",
+    subCategory: "生活工学・食品化学",
     name: "野生果実の酵素処理およびビタミン抽出",
     level: 95,
     status: "Active",
@@ -763,6 +826,7 @@ export const techStack = [
   {
     id: "agri-05",
     category: "農業工学・アルゴリズム",
+    subCategory: "農業工学・アルゴリズム",
     name: "泥水比重選別（泥選）プロトコル",
     level: 95,
     status: "Active",
@@ -775,6 +839,7 @@ export const techStack = [
   {
     id: "san-09",
     category: "衛生工学・バイオマス",
+    subCategory: "衛生工学・バイオマス",
     name: "籾殻式好気性バイオリアクタートイレ",
     level: 70,
     status: "Active",
@@ -786,7 +851,8 @@ export const techStack = [
   },
   {
     id: "trans-02",
-    category: "機械工学・物流",
+    category: "03. 機械・物理工学",
+    subCategory: "機械工学・物流",
     name: "高効率・多頭立て羊カー（Sheep-Car v1）",
     level: 75,
     status: "Active",
@@ -798,7 +864,8 @@ export const techStack = [
   },
   {
     id: "textile-03",
-    category: "材料工学・生活基盤",
+    category: "04. 材料・繊維工学",
+    subCategory: "材料工学・生活基盤",
     name: "アルカリ改質ヘンプ・リネン肌着（貫頭衣式）",
     level: 80,
     status: "Active",
@@ -810,7 +877,8 @@ export const techStack = [
   },
   {
     id: "textile-04",
-    category: "材料工学・生活基盤",
+    category: "04. 材料・繊維工学",
+    subCategory: "材料工学・生活基盤",
     name: "高通気性・組紐式機能性下着（ふんどし型）",
     level: 85,
     status: "Active",
@@ -822,7 +890,8 @@ export const techStack = [
   },
   {
     id: "textile-05",
-    category: "材料工学・生存基盤",
+    category: "04. 材料・繊維工学",
+    subCategory: "材料工学・生存基盤",
     name: "腰紐吊り式・防護ホーズ（オーバーニー）",
     level: 75,
     status: "Active",
@@ -834,7 +903,8 @@ export const techStack = [
   },
   {
     id: "water-01",
-    category: "環境工学・公衆衛生",
+    category: "01. 生存基盤・公衆衛生",
+    subCategory: "環境工学・公衆衛生",
     name: "家庭用・多層式緩速ろ過ユニット",
     level: 88,
     status: "Active",
@@ -843,5 +913,122 @@ export const techStack = [
     logic:
       "『水質パケットのディープ・パケット・インスペクション（DPI）』。物理的なトラップ（砂）だけでなく、微生物というエージェントによる生物学的処理を併用することで、煮沸なしでも安全な飲料水を定常的に供給する。ベルタの腹痛（ランタイムエラー）を未然に防ぐ、生活基盤のセキュリティ・ゲートウェイである。",
     achievedYear: 2,
+  },
+  {
+    id: "pulp-01",
+    category: "04. 材料・繊維工学",
+    subCategory: "材料工学・情報ストレージ",
+    name: "低温アルカリ蒸解・ヘンプペーパー（麻紙）プロトコル",
+    level: 75,
+    status: "Active",
+    description:
+      "ヘンプの靭皮繊維を灰汁（chem-02）で煮沸し、木槌（arch-04）で叩解（こうかい）してパルプ化。抄き桁（eng-10の技術転用）を用いて薄く成形し、平滑な石板で圧搾・乾燥させる。",
+    logic:
+      "『情報の外部構造化』。高価な羊皮紙（mat-01）に対し、農業副産物から安価にバルク生産可能な記録媒体を実装する。これにより、技術設計図（engカテゴリ）のバックアップや、ベルタへの教育用リソース（OSのアップデート）を紙ベースで非同期に提供可能にする。",
+    achievedYear: 3,
+  },
+  {
+    id: "pulp-02",
+    category: "04. 材料・繊維工学",
+    subCategory: "界面化学・記録工学",
+    name: "膠・明礬サイジング（にかわ・みょうばん下地処理）",
+    level: 80,
+    status: "Active",
+    description:
+      "膠（mat-01）と明礬（地元の鉱物資源から回収）の混合液を紙面に塗布するサイズ剤処理。紙の吸水性を制御し、インクの滲みを物理的にデバッグする。",
+    logic:
+      "『書き込み精度の向上』。未処理の麻紙は毛細管現象による滲み（ノイズ）が激しいが、サイジングにより表面張力を最適化することで、細密な図面や数式の記述を可能にする。情報の記録密度（ビット密度）を向上させ、限られた紙面積での情報保有量を最大化する。",
+    achievedYear: 3,
+  },
+  {
+    id: "arch-05",
+    category: "04. 材料・繊維工学",
+    subCategory: "建築工学・透光性材料",
+    name: "ヘンプ・オイルペーパー・ウィンドウ（油紙窓）",
+    level: 85,
+    status: "Active",
+    description:
+      "ヘンプペーパー（pulp-01）に加熱した精製タロウ（chem-06）または乾性植物油を浸透させ、繊維の隙間を油脂でパッキングした半透明の建材。",
+    logic:
+      "『光の透過と熱の遮断のトレードオフ最適化』。油脂による防水化と透過率向上を同時に達成。膀胱膜に比べ、大面積のデプロイが容易であり、破損時のパッチ（貼り替え）も容易。8世紀の住環境における『暗く寒い室内OS』への物理パッチとして機能する。",
+    achievedYear: 3,
+  },
+  {
+    id: "soc-02",
+    category: "05. 生活・社会システム",
+    subCategory: "言語工学・対人プロトコル",
+    name: "低レイヤー・パントマイム & 逐次単語マッピング（ガヴァガイ・プロトコル）",
+    level: 95,
+    status: "Active",
+    description:
+      "未知の古高ドイツ語に対し、物理的ジェスチャー（パントマイム）を先行入力し、返ってきた音声パケット（単語）を状況と紐付けて脳内辞書にアサインする動的学習プロセス。",
+    logic:
+      "『仕様書なきOSへのリバースエンジニアリング』。抽象概念を排除し、生存に直結する物理定数（水、火、食料、危険）の変数名を最優先で確定させる。言語の不完全性を身体言語で補完することで、初年度の『納税（システムチェック）』を突破し、村人からの『不審者フラグ（例外処理）』を回避する生存基盤である。",
+    achievedYear: 1,
+  },
+  {
+    id: "soc-03",
+    category: "05. 生活・社会システム",
+    subCategory: "社会工学・ガバナンス",
+    name: "ベルタ経由のパッシブ・リスニング & 幼児語ベースのプロキシ通信",
+    level: 80,
+    status: "Active",
+    description:
+      "学習能力の高いベルタが村人と交わす会話をキャプチャし、簡略化された語彙（幼児語プロトコル）を自身の言語スタックにバックポートする手法。",
+    logic:
+      "『並列学習によるデバッグ効率化』。大人の複雑な格変化や方言ノイズを、子供向けのクリーンなインターフェース（ベルタ）を通してフィルタリングする。これにより、最短期間で『村の共有OS』への書き込み権限を取得。お兄さんの高度な思考を、村人が理解可能な低解像度な言葉へダウンコンバートして出力することを可能にする。",
+    achievedYear: 1,
+  },
+  {
+    id: "soc-06",
+    category: "05. 生活・社会システム",
+    subCategory: "交渉工学・心理ハック",
+    name: "葬送儀礼の『誠実さ』によるノイズキャンセリング",
+    level: 92,
+    status: "Active",
+    description:
+      "言葉を使わず、両親の埋葬という極めて厳粛かつ文化的な儀式を完璧に遂行することで、周囲の『不審者・略奪者』という疑念（ノイズ）を相殺する。石造りの墓碑（std-01の精密加工を転用）を立てることで、死者への敬意を可視化する。",
+    logic:
+      "『倫理的OSの互換性証明』。8世紀の農村において、死者を丁重に扱う振る舞いは『神の教えに従う者』という強力なメタデータとして機能する。村長に対して『この男は言葉は通じないが、我々と同じ、あるいはそれ以上に高度な倫理プロトコルを実装している』と誤認（あるいは正当に評価）させ、法的な例外処理（親族化）を引き出すための社会的バックドアである。",
+    achievedYear: 1,
+  },
+  {
+    id: "soc-07",
+    category: "05. 生活・社会システム",
+    subCategory: "契約・資産保全",
+    name: "パントマイムによる『収穫分配』の予約コミット",
+    level: 85,
+    status: "Active",
+    description:
+      "1/4マンスの土地を確保する際、村長に対し『来秋、この土地から得られる成果の一部を村（あるいは村長個人）へ還元する』ことを、身振りと収穫物のジェスチャーで契約合意させる。",
+    logic:
+      "『インセンティブの提示によるアクセスコントロール』。単に居座るのではなく、村にとって利益をもたらす『リソース（ノード）』であることを明示。村長に『このアジア人を追い出すよりも、土地を預けて成果を待つ方が期待値が高い』と計算させることで、法的保護の永続性を確保する。これは将来的な技術デプロイ（agri-01等）のための事前承認（Pre-approval）である。",
+    achievedYear: 1,
+  },
+  {
+    id: "soc-08",
+    category: "05. 生活・社会システム",
+    subCategory: "社会工学・リソース最適化",
+    name: "冬明けのガバナンス・ハック（空きノードの有効活用）",
+    level: 90,
+    status: "Active",
+    description:
+      "冬明けの労働力不足と孤児扶養問題を、外部ユニット（お兄さん）の導入により一括解決する。1/4マンスの土地という『休眠リソース』を稼働状態に戻す。",
+    logic:
+      "『管理コストの外部委託（アウトソーシング）』。村長にとって、親を亡くしたベルタと放置された土地は『負の資産』であったが、お兄さんが後見人を引き受けることで『生産ノード』へ転換。村長は『慈悲深い指導者』という名声（バフ）を得つつ、実質的な扶養コストをゼロにする。お兄さんは、この合意により公的な生存権限（パーミッション）を最速で取得した。",
+    achievedYear: 1,
+  },
+  {
+    id: "soc-10",
+    category: "05. 生活・社会システム",
+    subCategory: "精神工学・自己最適化",
+    name: "マインドフルネス・オートラン（半覚醒・自動作業プロトコル）",
+    level: 95,
+    status: "Active",
+    description:
+      "瞑想と呼吸法を組み合わせ、脳の特定領域をアイドリング状態に保ちながら、身体をルーチンワーク（除草、ドングリ拾い、石拾い）に最適化させる技術。",
+    logic:
+      "『CPU使用率の動的制御（DVFS）』。単調だが長時間のリソースを必要とする物理タスクにおいて、意識をバックグラウンドに逃がすことで精神的磨耗を防止。身体は『死なない程度に覚醒』した状態で正確な出力を続け、浮いた意識で技術設計（R&D）や言語学習のシミュレーションを行う。8世紀の『労働地獄』を『計算時間』に変換する転生者の特権的スキル。",
+    achievedYear: 1,
   },
 ];
