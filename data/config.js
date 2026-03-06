@@ -1,32 +1,37 @@
+/**
+ * config.js
+ * 設計原則：物理制約（トポロジー）と社会ルール（エ enforcedRules）を定義。
+ */
 export const config = {
   origins: {
-    timeline: "8世紀フランク王国・入植地（初年度春）",
+    timeline: "8世紀フランク王国ドイツ内陸あたりの農村・入植地（1年目春）",
     situation:
-      "両親の死亡直後。8歳の少女が一人残された。生き残るための科学的介入を開始する。",
+      "少女（8歳）を生存させ、村の衛生・農業水準を引き上げることで、彼女が「異端」として排除されない社会的基盤を構築する。",
     assets: [
       {
         id: "livestock",
-        label: "家畜（瀕死）",
-        value: "雌羊1, 雌鶏3",
-        status: "Critical",
+        label: "家畜（冬開け弱っている）",
+        value: "雌羊（1匹、妊娠）, 雌鶏（3羽）",
+        status: "Stable",
       },
       {
-        id: "seeds",
-        label: "種籾（40%）",
-        value: "小麦, 大麦, 燕麦",
-        status: "Low",
+        id: "land_active",
+        label: "実耕作地",
+        value:
+          "150a (150a小麦がすでにまかれている。まともな範囲は30a程度しかない)",
+        status: "bad",
       },
       {
-        id: "land_30",
-        label: "既開墾地",
-        value: "30a (痩せ地)",
-        status: "Active",
+        id: "land_fallow",
+        label: "休耕・開放放牧地",
+        value: "150a（放置。基本的な雑草が生えている）",
+        status: "bad",
       },
       {
-        id: "land_90",
-        label: "開墾予定地",
-        value: "90a(未開墾)",
-        status: "Active",
+        id: "land_forest",
+        label: "開墾割当（森）",
+        value: "90a (巨木リソース・未開墾領域)",
+        status: "Resource-Rich",
       },
       {
         id: "mission",
@@ -38,65 +43,98 @@ export const config = {
     missionDescription:
       "一人の少女を生存させ、村の衛生・農業水準を引き上げることで、彼女が「異端」として排除されない社会的基盤を構築する。",
   },
+
+  // ここが重要：script.jsが参照する新しいセクション
+  locationData: {
+    villageStructure: "塊村（住居集中型）",
+    coordinates: [
+      {
+        label: "150a小麦セクター",
+        value: "300m",
+        note: "秋の収穫後は休耕地に切り替わる",
+      },
+      {
+        label: "150a休耕・放牧地",
+        value: "800m",
+        note: "秋に小麦耕地に切り替わる",
+      },
+      { label: "河川（水場）", value: "450m", note: "物理的ボトルネック" },
+      {
+        label: "開墾割当の森",
+        value: "1.2km",
+        note: "巨木ハック・熱源ストレージ",
+      },
+      { label: "教会ノード", value: "2.5km", note: "社会的同期バッチ処理" },
+      {
+        label: "領主の町",
+        value: "12km",
+        note: "年次デプロイ・納税ルート",
+      },
+    ],
+  },
+
   healthMetrics: [
     {
       id: "sanitation",
-      label: "公衆衛生・免疫",
-      progress: 85,
+      label: "公衆衛生・免疫（漆喰）",
+      progress: 92,
       color: "bg-blue-600",
     },
     {
       id: "nutrition",
-      label: "栄養・体組成",
-      progress: 78,
+      label: "栄養・体組成（リン循環）",
+      progress: 88,
       color: "bg-emerald-600",
     },
     {
       id: "social",
-      label: "社会的受容度",
-      progress: 62,
+      label: "社会的受容度（納税完了）",
+      progress: 65,
       color: "bg-amber-600",
     },
     {
       id: "production",
-      label: "生産資本・技術",
-      progress: 55,
+      label: "生産資本・技術（旋盤）",
+      progress: 75,
       color: "bg-purple-600",
     },
   ],
+
   enforcedRules: [
     {
       id: "agricultural_cycle",
       label: "二圃制・強制耕作の義務",
-      rule: "村の全耕作地を二分割し、全戸一斉に休耕と作付けを切り替える。個別のサイクル変更は厳禁。",
+      rule: "全戸一斉に休耕と作付けを切り替える。個別のサイクル変更は厳禁。",
       oni_san_strategy:
-        "休耕期に生じる『空白時間』を、微生物リアクター（土中発酵）の稼働に最大活用する。",
+        "休耕期に6科混合播種を行い家畜を誘引。土壌のリン酸貯蓄を最大化する。",
     },
     {
       id: "new_land_right",
       label: "新規開墾地の私有権",
       rule: "既存の共有地外で自力開墾した土地は、開墾者の管理・所有物と認める。",
-      oni_san_strategy: "90aの開拓予定地の森があるのでそこを開墾する。",
+      oni_san_strategy:
+        "1.2km地点にある90aの森をハックし、ドメインを拡張する。",
     },
     {
       id: "communal_plowing",
       label: "共同プラウ（重犂）の供出",
-      rule: "深耕時には村の牛と労働力を集約する。家畜を持たぬ者は、人力による重労働を提供せねばならない。",
-      oni_san_strategy: "労働は提供するが耕地のプラウ自体は辞退する。",
+      rule: "深耕時には村の労働力を集約。家畜を持たぬ者は労働を提供せねばならない。",
+      oni_san_strategy:
+        "労働は提供するが自地のプラウは辞退。不耕起と菌根菌ネットワークを保護する。",
     },
     {
       id: "gleaning_rights",
-      label: "落穂・野草の採集権（貧者の権利）",
-      rule: "収穫後の耕作地や未利用の林・野において、誰でも落穂や野草、薪を採集して良い。",
+      label: "落穂・野草の採集権",
+      rule: "収穫後の耕作地や林において、誰でも落穂や薪を採集して良い。",
       oni_san_strategy:
-        "この権利を隠れ蓑に、有用な窒素固定植物（緑肥）の種子や、発酵に必要な菌床を村中から回収する。",
+        "これをシールドに村中の『家畜の骨』を回収、骨灰としてリンを還元する。",
     },
     {
       id: "mandatory_tax",
       label: "二重徴収（領主・教会）",
-      rule: "領主へ収穫の40%＋賦役(週3日)。教会へ収穫の10%（十分の一税）+安息日のミサ。合計50%の定率負担。",
+      rule: "領主へ40%、週3回の賦役、教会へ10%。合計50%の定率負担。",
       oni_san_status:
-        "システムの維持コストとして、最優先で『最高品質』を分離・確保。",
+        "1/4マンス(3ha)割当のため、耕地1.5haあたり750kg/年の納税が期待されている",
     },
   ],
 };

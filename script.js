@@ -47,7 +47,9 @@ window.updateVillagerYear = (year) => {
 const templates = {
   // script.js の templates.origins を拡張
   origins: () => {
-    const { origins, enforcedRules } = DATABASE; // enforcedRulesを抽出
+    // locationDataを抽出リストに追加して、未定義エラーを防止します
+    const { origins, enforcedRules, locationData } = DATABASE;
+
     return `
         <div class="animate-slide-in space-y-8">
             <div class="glass-panel p-10 rounded-3xl border-l-8 border-l-red-600 shadow-2xl">
@@ -71,6 +73,32 @@ const templates = {
                 </div>
             </div>
 
+            ${
+              locationData
+                ? `
+            <div class="glass-panel p-10 rounded-3xl border-l-8 border-l-emerald-600 bg-stone-900/20 shadow-2xl">
+                <h3 class="text-xl font-black text-stone-100 uppercase tracking-tighter mb-6 flex items-center gap-3">
+                    <span class="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></span>
+                    Topology: 物理的拠点・資源配置
+                </h3>
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                    ${locationData.coordinates
+                      .map(
+                        (coord) => `
+                        <div class="p-4 rounded-xl bg-stone-950/60 border border-stone-800 hover:border-emerald-900/50 transition-colors">
+                            <span class="text-[9px] font-black text-stone-500 uppercase block mb-1">${coord.label}</span>
+                            <div class="text-lg font-bold text-emerald-500">${coord.value}</div>
+                            <div class="text-[10px] text-stone-600 italic mt-1 leading-tight">${coord.note}</div>
+                        </div>
+                    `,
+                      )
+                      .join("")}
+                </div>
+            </div>
+            `
+                : ""
+            }
+            
             <div class="glass-panel p-10 rounded-3xl border-l-8 border-l-amber-600 shadow-2xl bg-stone-900/20">
                 <h3 class="text-xl font-black text-stone-100 uppercase tracking-tighter mb-6">System Rules: 土地・社会の強制制約</h3>
                 <div class="space-y-4">
