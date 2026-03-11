@@ -165,7 +165,6 @@ const templates = {
   },
 
   villagers: () => {
-    // 降臨元年(750年)を基準とした選択肢の生成
     const BASE_AD = 750;
     const availableYears = [
       ...new Set(
@@ -311,19 +310,27 @@ function renderVillagers() {
   const targetYear = parseInt(state.villager.year);
   const BASE_AD = 750;
 
-  // 住民リストの加工
   const displayData = DATABASE.villagers
     .map((v) => {
-      // 指定年以下の最新レコードを取得
       const record = [...v.history]
         .filter((h) => h.year <= targetYear)
         .sort((a, b) => b.year - a.year)[0];
+
+      const fatherName = v.father
+        ? DATABASE.villagers.find((p) => p.id === v.father)?.name
+        : null;
+      const motherName = v.mother
+        ? DATABASE.villagers.find((p) => p.id === v.mother)?.name
+        : null;
+      const spouseName = v.spouse
+        ? DATABASE.villagers.find((p) => p.id === v.spouse)?.name
+        : null;
 
       if (!record) return null;
 
       return {
         name: v.name,
-        // 年齢計算ロジック：Year 1 (750年) のとき birthYearOffset -7 なら 1 - (-7) = 8歳
+        family: { fatherName, motherName, spouseName },
         age: targetYear - v.birthYearOffset,
         ad: BASE_AD + (targetYear - 1),
         role: record.role,
@@ -337,15 +344,26 @@ function renderVillagers() {
   container.innerHTML = displayData
     .map(
       (v) => `
-    <div class="glass-panel p-6 rounded-2xl border border-stone-800 flex gap-6 animate-slide-in shadow-xl">
-        <div class="flex-1">
+    <div class="glass-panel p-6 rounded-2xl border border-stone-800 flex gap-6 animate-slide-in shadow-xl relative overflow-hidden">
+        <div class="flex-1 relative z-10">
             <div class="flex justify-between items-start mb-4">
                 <div>
-                    <h3 class="text-xl font-black text-stone-100">${v.name}</h3>
-                    <div class="flex items-center gap-2 mt-1">
+                    <h3 class="text-xl font-black text-stone-100 flex items-center gap-2">
+                        ${v.name}
+                        ${v.family.spouseName ? `<span class="text-[9px] px-2 py-0.5 bg-pink-500/10 text-pink-400 border border-pink-500/20 rounded-full font-bold tracking-tighter">♥ ${v.family.spouseName}</span>` : ""}
+                    </h3>
+                    <div class="flex flex-wrap items-center gap-x-2 gap-y-1 mt-1">
                         <span class="text-[10px] text-emerald-500 font-bold uppercase tracking-widest">${v.age}歳</span>
                         <span class="text-[10px] text-stone-600 font-bold">/</span>
                         <span class="text-[10px] text-stone-500 font-bold uppercase tracking-widest">${v.status}</span>
+                        ${
+                          v.family.fatherName || v.family.motherName
+                            ? `
+                            <span class="text-[10px] text-stone-600 font-bold">/</span>
+                            <span class="text-[9px] text-stone-500 font-bold">Parents: ${[v.family.fatherName, v.family.motherName].filter(Boolean).join(" & ")}</span>
+                        `
+                            : ""
+                        }
                     </div>
                 </div>
                 <span class="text-[10px] bg-emerald-900/30 text-emerald-500 px-2 py-1 rounded border border-emerald-800/50 font-black">${v.role}</span>

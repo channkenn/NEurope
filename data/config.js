@@ -4,10 +4,34 @@
  */
 export const config = {
   origins: {
-    timeline: "8世紀フランク王国ドイツ内陸あたりの農村・入植地（1年目春）",
+    timeline:
+      "8世紀フランク王国ドイツ内陸あたりバイエルン北部・フランケン地方（現在のオーバーフランケン近傍）の農村・入植地（1年目春）",
     situation:
       "少女（8歳）を生存させ、村の衛生・農業水準を引き上げることで、彼女が「異端」として排除されない社会的基盤を構築する。",
     assets: [
+      // --- 領地全体のデータ（マクロ） ---
+      {
+        id: "domain_sigibert",
+        label: "ジギベルト領主領（広域）",
+        value: "総人口：約1000人 (200世帯) / 8つの散在村 + 領主町",
+        status: "Stagnant", // 収穫倍率3倍以下の低迷状態
+        description:
+          "典型的な8世紀の小領主領。各村の連携はなく、資源は垂れ流し状態。",
+      },
+      {
+        id: "domain_land_total",
+        label: "領内総耕地面積",
+        value: "200マンス (約2000-3000ha)",
+        status: "Depleted",
+        description:
+          "面積は広いが、窒素・リン酸の欠乏により単位面積あたりの収穫は極めて低い。",
+      },
+      {
+        id: "population_data",
+        label: "村の総人口",
+        value: "100人 (20世帯)",
+        status: "At-Risk", // 衛生・食糧事情により変動
+      },
       {
         id: "livestock",
         label: "家畜（冬開け弱っている）",
@@ -47,6 +71,43 @@ export const config = {
   // ここが重要：script.jsが参照する新しいセクション
   locationData: {
     villageStructure: "塊村（住居集中型）",
+    region: "バイエルン北部・フランケン地方（現在のオーバーフランケン近傍）",
+    geology: {
+      bedrock: "ミュンヒベルク塊（Münchberg Massif）由来の変成岩帯",
+      availableMaterials: [
+        {
+          id: "serpentinite",
+          label: "蛇紋岩",
+          usage: "精密研磨石斧（三面摺り定盤による完全平面刃）",
+        },
+        {
+          id: "limestone",
+          label: "石灰岩",
+          usage: "消石灰による土壁補強・厩舎床の硬化・酸性土壌中和",
+        },
+        {
+          id: "bentonite",
+          label: "ベントナイト粘土",
+          usage: "住宅の防水シーリング・遮水層構築",
+        },
+        {
+          id: "flint",
+          label: "燧石（フリント）",
+          usage: "火起こし・精密スクレイパー",
+        },
+        {
+          id: "obsidian",
+          label: "黒曜石",
+          status: "Unavailable",
+          note: "地質学的に存在せず",
+        },
+      ],
+      soilType: "褐色森林土（針葉樹により酸性化傾向）",
+    },
+    climate: {
+      type: "内陸性気候（大陸性混合）",
+      phenomena: "厳冬期の積雪、晩春の霜、秋のドングリ落葉サイクル",
+    },
     coordinates: [
       {
         label: "150a小麦セクター",

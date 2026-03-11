@@ -34,9 +34,10 @@ export const villagers = [
     ],
   },
   {
-    id: "sister",
-    name: "少女",
+    id: "bertha",
+    name: "ベルタ",
     birthYearOffset: -7, // Year 1に8歳
+    spouse: "eliyah", // 少年（エリヤ）と結婚
     history: [
       {
         year: 1,
@@ -64,6 +65,171 @@ export const villagers = [
         health: 85,
         social: 98,
         traits: ["薬草学の権威", "慈愛"],
+      },
+    ],
+  },
+  {
+    id: "joseph", // 新規追加：ヨセフ
+    name: "ヨセフ",
+    birthYearOffset: -8,
+    father: "hanse", //
+    spouse: "maria", // 2年後にマリアと結婚
+    history: [
+      {
+        year: 1,
+        role: "婿候補",
+        status: "訓練中",
+        evaluation: "お兄さんのパニアに感動しLv.5に到達。",
+        traits: ["運搬工学", "パニア使い"],
+      },
+    ],
+  },
+  {
+    id: "hanse",
+    name: "ハンス",
+    birthYearOffset: -38, // 1年目に39歳。働き盛りからベテランへの移行期
+    history: [
+      {
+        year: 1,
+        role: "熟練農夫",
+        status: "懐疑的",
+        evaluation:
+          "ヨセフの父。先祖代々の農法を信じているが、息子のパニア（背負子）の効率を見て腰の負担軽減に興味を持つ。",
+        health: 70,
+        social: 80,
+        traits: ["伝統的知恵", "腰痛持ち"],
+      },
+      {
+        year: 5,
+        role: "資材運搬主任",
+        status: "感服",
+        evaluation:
+          "お兄さんの設計した『大八車プロトタイプ』の試験運用を担当。人力の限界を機械で超える喜びを知る。",
+        health: 75, // 衛生改善と負担軽減により健康度アップ
+        social: 85,
+        traits: ["物流の先駆者", "ヨセフの師"],
+      },
+    ],
+  }, // --- マリア（ヨセフの妻・食品化学） ---
+  {
+    id: "maria",
+    name: "マリア",
+    birthYearOffset: -9,
+    spouse: "joseph",
+    history: [
+      {
+        year: 5,
+        role: "食品工学主任",
+        status: "Lv.5",
+        evaluation:
+          "遠心分離機を使いこなし、透明スープと精製油脂を量産。村の食生活を革命した。",
+        health: 90,
+        social: 85,
+        traits: ["比重分離の魔術師", "油脂精製"],
+      },
+    ],
+  },
+  // --- エリヤ（ベルタの夫・狩猟防衛） ---
+  {
+    id: "eliyah",
+    name: "エリヤ",
+    birthYearOffset: 1,
+    spouse: "bertha", // 少女（ベルタ）と結婚
+    history: [
+      {
+        year: 4,
+        role: "防衛隊長",
+        status: "精強",
+        evaluation:
+          "ベルタの射撃と連携し、村の安全を確保。お兄さんの道具を最も使いこなす一人。",
+        health: 95,
+        social: 80,
+        traits: ["蛇紋岩手斧使い", "トラップマスター"],
+      },
+    ],
+  }, // --- ニコ（エルザの父） ---
+  {
+    id: "nico",
+    name: "ニコ",
+    birthYearOffset: -12, // 1年目に13歳。お兄さんの最初の「弟子」世代
+    father: "karl", // カールはニコの父でエルザの祖父
+    spouse: "ilse",
+    history: [
+      {
+        year: 4,
+        role: "見習い工員",
+        status: "熱心",
+        evaluation:
+          "お兄さんの指導下で木工と簡易鍛冶を学ぶ。エルザ村設立に向けた資材製作の主力。",
+        health: 90,
+        social: 70,
+        traits: ["基礎工作", "体力自慢"],
+      },
+      {
+        year: 27,
+        role: "エルザ村建設主任",
+        status: "誇らしい",
+        evaluation:
+          "娘エルザの村設立を技術面で支える。お兄さんの設計図を現場の資材で実現する男。",
+        health: 85,
+        social: 88,
+        traits: ["現場監督", "構造理解"],
+      },
+    ],
+  },
+  // --- イルゼ（エルザの母） ---
+  {
+    id: "ilse",
+    name: "イルゼ",
+    birthYearOffset: -10, // 1年目に11歳。ベルタに近い世代
+    spouse: "nico",
+    history: [
+      {
+        year: 4,
+        role: "生活改善班",
+        status: "活発",
+        evaluation:
+          "ベルタの織機技術とマリアの衛生知識をいち早く習得。村の少女たちのリーダー的存在。",
+        health: 92,
+        social: 75,
+        traits: ["生活ハック", "組織力"],
+      },
+      {
+        year: 31,
+        role: "エルザ村長老代行",
+        status: "厳格",
+        evaluation:
+          "アウローラが生まれた際、お兄さんの衛生ログを元に『聖域（産室）』の管理を徹底した。",
+        health: 88,
+        social: 92,
+        traits: ["衛生管理", "育児のベテラン"],
+      },
+    ],
+  }, // --- カール（ニコの父 / エルザの祖父） ---
+  {
+    id: "karl",
+    name: "カール",
+    birthYearOffset: -42, // 降臨(Year 1)時に43歳
+    history: [
+      {
+        year: 1,
+        role: "ベテラン猟師",
+        status: "静かな観察",
+        evaluation:
+          "ニコの父。森の境界を知る男。行き倒れの少女を救った『お兄さん』の所作に、ただならぬ合理性を感じて注視している。",
+        health: 75,
+        social: 85,
+        traits: ["森の知識", "現実主義"],
+      },
+      {
+        year: 10,
+        role: "村の長老衆",
+        status: "隠居",
+        evaluation:
+          "孫娘エルザの誕生を喜ぶ。お兄さんが推奨する『冬の乾布摩擦と換気』を長老会で支持し、老人の冬越し成功率を上げた立役者。",
+        health: 65,
+        social: 90,
+        traits: ["伝統と革新の橋渡し", "孫煩悩"],
       },
     ],
   },
@@ -166,6 +332,9 @@ export const villagers = [
     id: "joshua",
     name: "ヨシュア",
     birthYearOffset: 7, // Year 8誕生
+    father: "joseph",
+    mother: "maria",
+    spouse: "elsa",
     history: [
       {
         year: 8,
@@ -190,6 +359,9 @@ export const villagers = [
   {
     id: "elsa",
     name: "エルザ",
+    father: "nico",
+    mother: "ilse", // 追加
+    spouse: "joshua",
     birthYearOffset: 10, // Year 11誕生
     history: [
       {
@@ -228,6 +400,9 @@ export const villagers = [
     id: "roderich",
     name: "ローデリヒ",
     birthYearOffset: 22, // Year 23誕生
+    father: "sigibert",
+    mother: "gisela",
+    spouse: "gerda", // 8年後にゲルダと結婚
     history: [
       {
         year: 23,
@@ -251,15 +426,63 @@ export const villagers = [
     ],
   },
   {
-    id: "bertha",
-    name: "ベルタ",
+    id: "sigibert",
+    name: "ジギベルト",
+    spouse: "gisela",
+    role: "領主",
+    status: "伝統重視",
+    evaluation:
+      "6haの直営地を持つ地域領主。お兄さんの『異常な高収益』を、最初は単なる幸運（神の恩寵）と誤認するが、次第にその技術的優位性に気づき、システムの統合（婚姻）を画策する。",
+    history: [
+      {
+        year: 23, // ローデリヒ誕生時
+        health: 75,
+        social: 85,
+        traits: ["保守的経営", "物理的武力"],
+      },
+      {
+        year: 37, // 求婚時
+        health: 60,
+        social: 80,
+        traits: ["技術への畏怖", "賢明な譲歩"],
+      },
+    ],
+  },
+  {
+    id: "gisela",
+    name: "ギゼラ",
+    spouse: "sigibert",
+    role: "領主夫人",
+    status: "合理的・契約重視",
+    evaluation:
+      "ゲルダ（嫁）に対しても『契約』に基づいたドライな関係を維持する、非常に現代的な（お兄さんに近い）ロジックの持ち主。無駄な虚飾を嫌い、実利的なアルカリ処理リネンや脱脂ウールを愛用する。",
+    history: [
+      {
+        year: 23,
+        health: 82,
+        social: 90,
+        traits: ["家政管理の最適化", "冷徹な洞察"],
+      },
+      {
+        year: 37,
+        health: 78,
+        social: 95,
+        traits: ["技術的被服の愛好者", "エルザ村のバックエンド支持"],
+      },
+    ],
+  },
+  {
+    id: "gerda", // idをberthaからgerdaに変更
+    name: "ゲルダ", // 名前をベルタからゲルダに変更
     birthYearOffset: 28, // Year 29誕生
+    spouse: "roderich", // ローデリヒと結婚
     history: [
       {
         year: 29,
         role: "村娘",
         status: "才色兼備",
-        evaluation: "エルザ村で誕生。お兄さんの教育を受ける。",
+        evaluation:
+          "エルザ村で誕生。お兄さんの教育を受ける。エルザの娘アウローラと共に次世代を担う。",
         health: 95,
         social: 30,
         traits: ["エルザ村の至宝"],
@@ -269,7 +492,7 @@ export const villagers = [
         role: "領主夫人",
         status: "幸福",
         evaluation:
-          "ローデリヒと結婚。村の外（貴族社会）への影響力の象徴となる。",
+          "ローデリヒと結婚。村の外（貴族社会）への影響力の象徴となる。エルザ村の技術と精神を貴族社会へ繋ぐ架け橋。",
         health: 94,
         social: 95,
         traits: ["才女", "外交の要"],
@@ -280,6 +503,9 @@ export const villagers = [
     id: "aurora",
     name: "アウローラ",
     birthYearOffset: 30, // Year 31誕生
+    father: "joshua",
+    mother: "elsa",
+
     history: [
       {
         year: 31,

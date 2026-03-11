@@ -6,7 +6,7 @@
 
 import { config } from "./data/config.js";
 import { villagers } from "./data/villagers.js";
-import { techStack } from "./data/tech.js"; // 追加
+import { techStack } from "./data/tech/tech.js"; // 追加
 import { logs_y1 } from "./data/logs_y1.js";
 import { logs_y2 } from "./data/logs_y2.js";
 import { logs_y3 } from "./data/logs_y3.js";
