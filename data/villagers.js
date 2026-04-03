@@ -517,5 +517,70 @@ export const villagers = [
         traits: ["開拓地の申し子"],
       },
     ],
+  }, // --- 第4章以降：広域統治・歴史的上位存在 ---
+  {
+    id: "charlemagne",
+    name: "カール大帝 (Carolus Magnus)",
+    birthYearOffset: -8, // AD742誕生(定説) 降臨Year1(AD750)で8歳
+    role: "フランク国王 / 西ローマ皇帝",
+    history: [
+      {
+        year: 18, // AD768 国王即位
+        role: "フランク国王",
+        status: "拡大",
+        evaluation:
+          "移動宮廷（プファルツ）を率いて各地を転戦。識字率向上とキリスト教化を推進。",
+        health: 95,
+        social: 100,
+        traits: ["文教政策", "軍事的天才", "法典編纂者"],
+      },
+      {
+        year: 50, // AD800 皇帝戴冠
+        role: "西ローマ皇帝",
+        status: "頂点",
+        evaluation:
+          "「お兄さん」が記した『農園管理ログ』の写本が、巡回査察使の手を経て宮廷に到達。その合理性に驚愕し、後の『領地勅令（Capitulare de villis）』の着想を得る。",
+        health: 80,
+        social: 100,
+        traits: ["ヨーロッパの父", "技術の蒐集者"],
+      },
+    ],
+  },
+  {
+    id: "count-eberhard",
+    name: "エバーハルト広域伯",
+    birthYearOffset: -30,
+    role: "広域行政官（伯）",
+    status: "実利主義",
+    evaluation:
+      "ジギベルトの上位領主。複数の村を統括し、王への徴税義務を負う。ジギベルトの領地から届く「異常に白く不純物のない塩」と「腐らない石鹸」に、新たな徴税源としての可能性を見出す。",
+    history: [
+      {
+        year: 37, // ローデリヒ求婚時
+        role: "広域伯",
+        health: 75,
+        social: 95,
+        traits: ["冷徹な徴税官", "物流網の支配者"],
+      },
+    ],
+  },
+  {
+    id: "anselm",
+    name: "アンセルム",
+    birthYearOffset: -75,
+    father: null, // ジギベルトの父
+    role: "先代領主（故人）",
+    history: [
+      {
+        year: 1,
+        role: "隠居領主",
+        status: "伝統死守",
+        evaluation:
+          "ジギベルトの父。「土地は血と鉄で守るもの」という旧来の騎士道精神の塊。お兄さんの活動初期、彼が健在であったら「妖術師」として排除されていた可能性が高い。",
+        health: 40,
+        social: 80,
+        traits: ["頑固一徹", "戦士の誇り"],
+      },
+    ],
   },
 ];
