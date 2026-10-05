@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>1話作成用フォーマット生成ツール</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        background-color: #f4f6f9;
+        color: #333;
+        padding: 20px;
+        margin: 0;
+      }
+      .container {
+        max-width: 750px;
+        margin: 0 auto;
+        background: #fff;
+        padding: 25px;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      }
+      h1 {
+        font-size: 1.4rem;
+        color: #2b5278;
+        border-bottom: 2px solid #2b5278;
+        padding-bottom: 8px;
+        margin-top: 0;
+      }
+      .form-group {
+        margin-bottom: 18px;
+      }
+      label {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 5px;
+        color: #2b5278;
+      }
+      input[type="text"],
+      textarea {
+        width: 100%;
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        font-size: 0.95rem;
+      }
+      .dynamic-list {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+      .list-item {
+        display: flex;
+        gap: 6px;
+      }
+      .btn-remove {
+        background: #dc3545;
+        color: #fff;
+        border: none;
+        padding: 0 10px;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      .btn-add {
+        margin-top: 6px;
+        background: #6c757d;
+        color: #fff;
+        border: none;
+        padding: 6px 12px;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      .btn-generate {
+        width: 100%;
+        background: #2b5278;
+        color: #fff;
+        border: none;
+        padding: 12px;
+        font-size: 1rem;
+        font-weight: bold;
+        border-radius: 4px;
+        cursor: pointer;
+        margin-top: 10px;
+      }
+      .output-section {
+        margin-top: 30px;
+        border-top: 2px dashed #ccc;
+        padding-top: 20px;
+      }
+      .output-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 10px;
+      }
+      .btn-copy {
+        background: #28a745;
+        color: #fff;
+        border: none;
+        padding: 8px 16px;
+        border-radius: 4px;
+        cursor: pointer;
+        font-weight: bold;
+      }
+      pre {
+        background: #f8f9fa;
+        border: 1px solid #ccc;
+        padding: 15px;
+        border-radius: 4px;
+        white-space: pre-wrap;
+        word-wrap: break-word;
+        font-size: 0.9rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>1話作成用・簡易フォーマット生成ツール</h1>
+
+      <form id="formatForm">
+        <div class="form-group">
+          <label for="pov">【視点人物（語り手）】</label>
+          <input
+            type="text"
+            id="pov"
+            placeholder="領主ギゼベルト / 側近アインハルト など"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="goal">【この話の目的（Goal）】</label>
+          <textarea
+            id="goal"
+            rows="2"
+            placeholder="領内の小麦収穫量を増やすための新水路工事を秋までに完了させたい"
+          ></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="obstacle">【直面する障害（Obstacle）】</label>
+          <textarea
+            id="obstacle"
+            rows="2"
+            placeholder="鉄器が貴重すぎて掘削工具が足りない / 泥質土壌で壁面が崩落する / 現場作業員の疲弊"
+          ></textarea>
+        </div>
+
+        <div class="form-group">
+          <label>【具体的な場面・出来事のリスト（3〜5項目）】</label>
+          <div id="sceneList" class="dynamic-list">
+            <div class="list-item">
+              <input
+                type="text"
+                class="scene-input"
+                placeholder="現場監督から「鉄のシャベルが砕けて作業がストップした」との報告を受ける"
+              />
+            </div>
+            <div class="list-item">
+              <input
+                type="text"
+                class="scene-input"
+                placeholder="現場を視察して、粘土質の傾斜地で崩落が頻発している惨状を目の当たりにする"
+              />
+            </div>
+            <div class="list-item">
+              <input
+                type="text"
+                class="scene-input"
+                placeholder="転生お兄さんから「ポゾランコンクリートとポゾラン漆喰による補強」の知恵を授かる"
+              />
+            </div>
+          </div>
+          <button type="button" class="btn-add" onclick="addScene()">
+            ＋ 場面を追加
+          </button>
+        </div>
+
+        <div class="form-group">
+          <label for="choice">【クライマックス／結末 - 決断（Choice）】</label>
+          <textarea
+            id="choice"
+            rows="2"
+            placeholder="従来の木枠補強を全廃し、メタカオリンを用いた古代コンクリート施工への切り替えを決断する"
+          ></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="consequence"
+            >【クライマックス／結末 - 結果（Consequence）】</label
+          >
+          <textarea
+            id="consequence"
+            rows="2"
+            placeholder="強度と施工速度が劇的に向上し、秋の増水に間に合う見通しが立つが、大量の焼成作業で炭不足という次の課題が浮き彫りになる"
+          ></textarea>
+        </div>
+
+        <div class="form-group">
+          <label>【後書きで解説したい技術（3つ）】</label>
+          <div id="techList" class="dynamic-list">
+            <div class="list-item">
+              <input
+                type="text"
+                class="tech-input"
+                placeholder="ポゾランコンクリート"
+              />
+            </div>
+            <div class="list-item">
+              <input
+                type="text"
+                class="tech-input"
+                placeholder="メタカオリン"
+              />
+            </div>
+            <div class="list-item">
+              <input
+                type="text"
+                class="tech-input"
+                placeholder="緩速ろ過システム"
+              />
+            </div>
+          </div>
+        </div>
+
+        <button type="button" class="btn-generate" onclick="generateOutput()">
+          フォーマットテキストを生成
+        </button>
+      </form>
+
+      <div class="output-section">
+        <div class="output-header">
+          <label style="margin: 0">生成結果</label>
+          <button class="btn-copy" onclick="copyToClipboard()">
+            コピーする
+          </button>
+        </div>
+        <pre id="outputResult">
+項目を入力して「フォーマットテキストを生成」ボタンを押すと、ここに完成したテキストが表示されます。</pre
+        >
+      </div>
+    </div>
+
+    <script>
+      function addScene() {
+        const container = document.getElementById("sceneList");
+        const div = document.createElement("div");
+        div.className = "list-item";
+        div.innerHTML =
+          '<input type="text" class="scene-input" placeholder="出来事を入力"><button type="button" class="btn-remove" onclick="this.parentElement.remove()">削除</button>';
+        container.appendChild(div);
+      }
+
+      function generateOutput() {
+        const pov = document.getElementById("pov").value || "（未入力）";
+        const goal = document.getElementById("goal").value || "（未入力）";
+        const obstacle =
+          document.getElementById("obstacle").value || "（未入力）";
+        const choice = document.getElementById("choice").value || "（未入力）";
+        const consequence =
+          document.getElementById("consequence").value || "（未入力）";
+
+        const sceneInputs = document.querySelectorAll(".scene-input");
+        let scenesText = "";
+        sceneInputs.forEach((input, index) => {
+          const val = input.value.trim();
+          if (val) scenesText += index + 1 + ". （例：" + val + "）\n";
+        });
+        if (!scenesText) scenesText = "（場面未入力）\n";
+
+        const techInputs = document.querySelectorAll(".tech-input");
+        let techText = "";
+        techInputs.forEach((input, index) => {
+          const val = input.value.trim();
+          if (val) techText += index + 1 + ". （例：" + val + "）\n";
+        });
+        if (!techText) techText = "（技術未入力）\n";
+
+        const result = `【視点人物（語り手）】
+（例：${pov}）
+
+【この話の目的（Goal）】
+（例：${goal}）
+
+【直面する障害（Obstacle）】
+（例：${obstacle}）
+
+【具体的な場面・出来事のリスト（3〜5項目）】
+${scenesText}
+【クライマックス／結末（Choice & Consequence）】
+・決断（Choice）：（例：${choice}）
+・結果（Consequence）：（例：${consequence}）
+
+【後書きで解説したい技術（3つ）】
+${techText.trim()}`;
+
+        document.getElementById("outputResult").textContent = result;
+      }
+
+      function copyToClipboard() {
+        const text = document.getElementById("outputResult").textContent;
+        navigator.clipboard
+          .writeText(text)
+          .then(() => {
+            alert("コピーしました！");
+          })
+          .catch((err) => {
+            alert("コピー失敗: " + err);
+          });
+      }
+    </script>
+  </body>
+</html>
