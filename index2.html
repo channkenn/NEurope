@@ -264,7 +264,7 @@
         let scenesText = "";
         sceneInputs.forEach((input, index) => {
           const val = input.value.trim();
-          if (val) scenesText += index + 1 + ". （例：" + val + "）\n";
+          if (val) scenesText += index + 1 + ". （" + val + "）\n";
         });
         if (!scenesText) scenesText = "（場面未入力）\n";
 
@@ -272,24 +272,24 @@
         let techText = "";
         techInputs.forEach((input, index) => {
           const val = input.value.trim();
-          if (val) techText += index + 1 + ". （例：" + val + "）\n";
+          if (val) techText += index + 1 + ". （" + val + "）\n";
         });
         if (!techText) techText = "（技術未入力）\n";
 
         const result = `【視点人物（語り手）】
-（例：${pov}）
+（${pov}）
 
 【この話の目的（Goal）】
-（例：${goal}）
+（${goal}）
 
 【直面する障害（Obstacle）】
-（例：${obstacle}）
+（${obstacle}）
 
 【具体的な場面・出来事のリスト（3〜5項目）】
 ${scenesText}
 【クライマックス／結末（Choice & Consequence）】
-・決断（Choice）：（例：${choice}）
-・結果（Consequence）：（例：${consequence}）
+・決断（Choice）：（${choice}）
+・結果（Consequence）：（${consequence}）
 
 【後書きで解説したい技術（3つ）】
 ${techText.trim()}`;
